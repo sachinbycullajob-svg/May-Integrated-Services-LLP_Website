@@ -11,8 +11,12 @@ app.use(express.json());
 
 // Ensure data directory exists
 const dataDir = path.join(process.cwd(), "data");
-if (!fs.existsSync(dataDir)) {
-  fs.mkdirSync(dataDir, { recursive: true });
+try {
+  if (!fs.existsSync(dataDir)) {
+    fs.mkdirSync(dataDir, { recursive: true });
+  }
+} catch (err) {
+  console.warn("Could not create data directory, possibly running in a read-only environment like Vercel.");
 }
 
 const INQUIRIES_FILE = path.join(dataDir, "inquiries.json");
@@ -33,7 +37,11 @@ function appendToFile(filePath: string, record: any) {
     list = [];
   }
   list.push(record);
-  fs.writeFileSync(filePath, JSON.stringify(list, null, 2), "utf-8");
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(list, null, 2), "utf-8");
+  } catch (err) {
+    console.warn("Could not write to local file (read-only environment).");
+  }
 }
 
 // Helper to send data to Google Sheets via Google Apps Script Web App / Webhook if configured
