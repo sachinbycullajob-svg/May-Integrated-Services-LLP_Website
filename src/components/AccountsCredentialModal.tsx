@@ -137,7 +137,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in">
-      <div className={`w-full max-w-6xl h-[85vh] flex overflow-hidden rounded-xl border relative shadow-2xl ${
+      <div className={`w-full max-w-[95vw] h-[85vh] flex overflow-hidden rounded-xl border relative shadow-2xl ${
         themeMode === 'dark' ? 'bg-[#0a0a0a] border-[#222] text-gray-200' : 'bg-white border-gray-200 text-gray-800'
       }`}>
         
@@ -150,7 +150,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
         </button>
 
         {/* Left Navigation Panel */}
-        <div className={`w-64 flex-shrink-0 border-r flex flex-col ${
+        <div className={`w-48 flex-shrink-0 border-r flex flex-col ${
           themeMode === 'dark' ? 'bg-[#111] border-[#222]' : 'bg-gray-50 border-gray-200'
         }`}>
           <div className={`p-6 border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
@@ -210,10 +210,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                 <Loader2 className={`w-6 h-6 animate-spin ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-500'}`} />
               </div>
             ) : (
-              <div className="min-w-[800px] p-6 pt-2">
-                <div className={`grid grid-cols-6 gap-4 p-3 rounded-md text-[11px] font-bold uppercase tracking-widest mb-2 ${
-                  themeMode === 'dark' ? 'bg-[#111] text-gray-400' : 'bg-gray-50 text-gray-500'
-                }`}>
+              <div className="min-w-[1100px] p-6 pt-2">
+                <div className={`grid grid-cols-6 gap-4 p-3 rounded-md text-[11px] font-bold uppercase tracking-widest mb-2 bg-[#2f5539] text-white`}>
                   <div>Platform</div>
                   <div>User Id</div>
                   <div>Password</div>
@@ -230,11 +228,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                           type="text"
                           value={row[field as keyof AccountRow] as string}
                           onChange={(e) => handleInputChange(row.id, field as keyof AccountRow, e.target.value)}
-                          className={`w-full px-3 py-2.5 rounded-md border text-sm focus:outline-none transition-colors ${
-                            themeMode === 'dark' 
-                              ? 'bg-[#111] border-[#222] focus:border-gray-500 text-gray-200' 
-                              : 'bg-white border-gray-200 focus:border-gray-400 text-gray-900'
-                          }`}
+                          className="w-full px-3 py-2.5 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2f5539] transition-colors bg-[#a4c2f4] text-black placeholder-gray-600 border border-[#8dafe4]"
                         />
                       ))}
                     </div>
