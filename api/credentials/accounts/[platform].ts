@@ -1,4 +1,4 @@
-import { initGoogleSheet } from '../../_google-sheets';
+import { initGoogleSheet } from '../../_google-sheets.js';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {

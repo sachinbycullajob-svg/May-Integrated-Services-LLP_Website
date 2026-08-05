@@ -1,4 +1,4 @@
-import { initGoogleSheet, SPREADSHEET_ID, TARGET_EMAIL } from './_google-sheets';
+import { initGoogleSheet, SPREADSHEET_ID, TARGET_EMAIL } from './_google-sheets.js';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 
 async function saveToGoogleSheet(tabName: string, rowData: Record<string, any>) {
