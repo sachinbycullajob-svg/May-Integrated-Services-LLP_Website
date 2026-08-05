@@ -1,7 +1,6 @@
 import express from "express";
 import path from "path";
 import fs from "fs";
-import { createServer as createViteServer } from "vite";
 import { JWT } from "google-auth-library";
 import { GoogleSpreadsheet } from "google-spreadsheet";
 
@@ -295,6 +294,7 @@ app.post("/api/credentials/users", async (req, res) => {
 // Start Server with Vite Middleware in Dev or Static files in Production
 async function startServer() {
   if (process.env.NODE_ENV !== "production") {
+    const { createServer: createViteServer } = await import("vite");
     const vite = await createViteServer({
       server: { middlewareMode: true },
       appType: "spa",
@@ -313,4 +313,9 @@ async function startServer() {
   });
 }
 
-startServer();
+// Only start the server if not running on Vercel
+if (!process.env.VERCEL) {
+  startServer();
+}
+
+export default app;
