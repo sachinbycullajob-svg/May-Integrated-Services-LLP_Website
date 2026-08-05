@@ -34,9 +34,9 @@ export const PasswordProtectedModal: React.FC<PasswordProtectedModalProps> = ({
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
-      <div className={`w-full max-w-md p-6 sm:p-8 rounded-3xl border shadow-2xl relative ${
-        themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-800'
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 animate-in fade-in">
+      <div className={`w-full max-w-md p-6 sm:p-8 rounded-xl border relative ${
+        themeMode === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-200' : 'bg-white border-slate-300 text-slate-800'
       }`}>
         
         {/* Close Button */}
@@ -49,10 +49,10 @@ export const PasswordProtectedModal: React.FC<PasswordProtectedModalProps> = ({
 
         {/* Modal Header */}
         <div className="text-center mb-6">
-          <div className="mx-auto w-12 h-12 bg-sky-500/10 border border-sky-500/30 rounded-2xl flex items-center justify-center mb-4 text-sky-400">
+          <div className="mx-auto w-12 h-12 bg-blue-600/10 border border-blue-600/30 rounded-full flex items-center justify-center mb-4 text-blue-600">
             <Lock className="w-6 h-6" />
           </div>
-          <h2 className={`text-xl sm:text-2xl font-extrabold tracking-tight ${
+          <h2 className={`text-xl sm:text-2xl font-bold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
             Secure Access
@@ -70,10 +70,10 @@ export const PasswordProtectedModal: React.FC<PasswordProtectedModalProps> = ({
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               placeholder="Enter password..."
-              className={`w-full px-4 py-3 rounded-xl border text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-colors ${
+              className={`w-full px-4 py-3 rounded-md border text-sm focus:outline-none focus:border-blue-500 transition-colors ${
                 themeMode === 'dark' 
-                  ? 'bg-slate-950 border-slate-800 text-white placeholder:text-slate-500' 
-                  : 'bg-slate-50 border-slate-200 text-slate-900 placeholder:text-slate-400'
+                  ? 'bg-slate-800 border-slate-700 text-white placeholder:text-slate-500' 
+                  : 'bg-white border-slate-300 text-slate-900 placeholder:text-slate-400'
               }`}
               autoFocus
             />
@@ -87,7 +87,7 @@ export const PasswordProtectedModal: React.FC<PasswordProtectedModalProps> = ({
 
           <button
             type="submit"
-            className="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-xl font-bold shadow-lg shadow-sky-500/25 transition-all duration-200 active:scale-[0.98]"
+            className="w-full flex items-center justify-center space-x-2 py-3 px-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold transition-colors duration-200"
           >
             <span>Verify & Proceed</span>
             <ArrowRight className="w-4 h-4" />

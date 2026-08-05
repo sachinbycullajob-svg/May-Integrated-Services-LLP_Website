@@ -45,7 +45,13 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
     setSuccessMsg('');
     try {
       const res = await fetch(`/api/credentials/accounts/${encodeURIComponent(tab)}`);
-      const result = await res.json();
+      let result;
+      try {
+        result = await res.json();
+      } catch (e) {
+        throw new Error('Server returned an invalid response. API might not be running.');
+      }
+      
       if (result.success) {
         const mapped = result.data.map((row: any, i: number) => ({
           id: `row-${i}-${Date.now()}`,
@@ -60,8 +66,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
       } else {
         setError(result.error || 'Failed to fetch data');
       }
-    } catch (err) {
-      setError('Network error fetching data.');
+    } catch (err: any) {
+      setError(err.message || 'Network error fetching data.');
     } finally {
       setLoading(false);
     }
@@ -106,7 +112,13 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ data: payload })
       });
-      const result = await res.json();
+      let result;
+      try {
+        result = await res.json();
+      } catch (e) {
+        throw new Error('Server returned an invalid response. API might not be running.');
+      }
+
       if (result.success) {
         setSuccessMsg('Data saved successfully!');
         setTimeout(() => setSuccessMsg(''), 3000);
@@ -115,8 +127,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
       } else {
         setError(result.error || 'Failed to save data');
       }
-    } catch (err) {
-      setError('Network error saving data.');
+    } catch (err: any) {
+      setError(err.message || 'Network error saving data.');
     } finally {
       setSaving(false);
     }
@@ -125,9 +137,9 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
-      <div className={`w-full max-w-6xl h-[85vh] flex overflow-hidden rounded-3xl border shadow-2xl relative ${
-        themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-slate-300' : 'bg-white border-slate-200 text-slate-800'
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 animate-in fade-in">
+      <div className={`w-full max-w-6xl h-[85vh] flex overflow-hidden rounded-xl border relative ${
+        themeMode === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-200' : 'bg-white border-slate-300 text-slate-800'
       }`}>
         
         {/* Close Button */}
@@ -140,9 +152,9 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Left Navigation Panel */}
         <div className={`w-64 flex-shrink-0 border-r flex flex-col ${
-          themeMode === 'dark' ? 'bg-slate-950/50 border-slate-800' : 'bg-slate-50 border-slate-200'
+          themeMode === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-slate-100 border-slate-300'
         }`}>
-          <div className="p-6 border-b border-slate-800/10 dark:border-slate-800">
+          <div className="p-6 border-b border-slate-700/50 dark:border-slate-700">
             <h2 className={`text-lg font-bold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
               Accounts Credential
             </h2>
@@ -152,10 +164,10 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`w-full text-left px-4 py-3 rounded-xl transition-all duration-200 text-sm font-medium ${
+                className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 text-sm font-medium ${
                   activeTab === tab
-                    ? 'bg-sky-500 text-white shadow-md shadow-sky-500/20'
-                    : `hover:bg-sky-500/10 ${themeMode === 'dark' ? 'text-slate-400 hover:text-sky-400' : 'text-slate-600 hover:text-sky-600'}`
+                    ? 'bg-blue-600 text-white'
+                    : `hover:bg-slate-200 dark:hover:bg-slate-700 ${themeMode === 'dark' ? 'text-slate-300' : 'text-slate-700'}`
                 }`}
               >
                 {tab}
@@ -166,17 +178,17 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col overflow-hidden relative">
-          <div className="p-6 pb-0 flex items-center justify-between border-b border-slate-800/10 dark:border-slate-800 pb-4">
+          <div className="p-6 pb-4 flex items-center justify-between border-b border-slate-700/50 dark:border-slate-700">
             <h3 className={`text-xl font-bold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
               {activeTab}
             </h3>
             <div className="flex items-center space-x-3 mr-10">
-              {successMsg && <span className="text-sm text-emerald-500 font-medium">{successMsg}</span>}
+              {successMsg && <span className="text-sm text-green-500 font-medium">{successMsg}</span>}
               {error && <span className="text-sm text-red-500 font-medium">{error}</span>}
               <button
                 onClick={handleSave}
                 disabled={saving || loading}
-                className="flex items-center space-x-2 px-4 py-2 bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 text-white rounded-lg font-semibold shadow-lg shadow-sky-500/25 transition-all duration-200 active:scale-95 disabled:opacity-50"
+                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold transition-colors duration-200 disabled:opacity-50"
               >
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
                 <span>Save Changes</span>
@@ -187,12 +199,12 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
           <div className="flex-1 overflow-auto p-6">
             {loading ? (
               <div className="flex items-center justify-center h-full">
-                <Loader2 className="w-8 h-8 text-sky-500 animate-spin" />
+                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
               </div>
             ) : (
               <div className="min-w-[800px]">
-                <div className={`grid grid-cols-6 gap-4 p-4 rounded-t-xl text-xs font-bold uppercase tracking-wider ${
-                  themeMode === 'dark' ? 'bg-slate-800/50 text-slate-400' : 'bg-slate-100 text-slate-500'
+                <div className={`grid grid-cols-6 gap-4 p-4 rounded-t-md text-xs font-bold uppercase tracking-wider ${
+                  themeMode === 'dark' ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
                 }`}>
                   <div>Platform</div>
                   <div>User Id</div>
@@ -210,10 +222,10 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                           type="text"
                           value={row[field as keyof AccountRow] as string}
                           onChange={(e) => handleInputChange(row.id, field as keyof AccountRow, e.target.value)}
-                          className={`w-full px-3 py-2 rounded-lg border text-sm focus:outline-none focus:ring-2 focus:ring-sky-500/50 transition-colors ${
+                          className={`w-full px-3 py-2 rounded-md border text-sm focus:outline-none focus:border-blue-500 transition-colors ${
                             themeMode === 'dark' 
-                              ? 'bg-slate-950 border-slate-800 text-white' 
-                              : 'bg-white border-slate-200 text-slate-900'
+                              ? 'bg-slate-800 border-slate-700 text-white' 
+                              : 'bg-white border-slate-300 text-slate-900'
                           }`}
                         />
                       ))}
@@ -223,7 +235,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
                 <button
                   onClick={handleAddRow}
-                  className="mt-6 flex items-center space-x-2 px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white rounded-lg font-medium transition-colors border border-slate-700 hover:border-slate-600"
+                  className="mt-6 flex items-center space-x-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 rounded-md font-medium transition-colors border border-slate-300 dark:border-slate-700"
                 >
                   <Plus className="w-4 h-4" />
                   <span>Add New Row</span>
