@@ -63,15 +63,15 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
-      {/* Main Floating Glass Navbar */}
+      {/* Main Floating Navbar */}
       <nav className={`transition-all duration-300 ${
         isScrolled
           ? themeMode === 'dark'
-            ? 'bg-slate-900/90 backdrop-blur-xl border-b border-slate-800 shadow-2xl py-3'
-            : 'bg-white/90 backdrop-blur-xl border-b border-slate-200 shadow-xl py-3'
+            ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#222] py-3'
+            : 'bg-white/95 backdrop-blur-md border-b border-gray-200 py-3'
           : themeMode === 'dark'
-            ? 'bg-slate-950/60 backdrop-blur-md py-4'
-            : 'bg-white/70 backdrop-blur-md py-4'
+            ? 'bg-[#0a0a0a]/80 backdrop-blur-sm py-4 border-b border-transparent'
+            : 'bg-white/80 backdrop-blur-sm py-4 border-b border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
@@ -80,20 +80,22 @@ export const Navbar: React.FC<NavbarProps> = ({
             onClick={() => handleNavClick('home')}
             className="flex items-center space-x-3 group text-left"
           >
-            <div className="relative w-10 h-10 rounded-xl bg-gradient-to-br from-sky-500 via-blue-600 to-indigo-700 p-0.5 shadow-lg shadow-sky-500/20 group-hover:scale-105 transition-transform duration-300">
-              <div className="w-full h-full bg-slate-950 rounded-[10px] flex items-center justify-center">
-                <Globe className="w-5 h-5 text-sky-400 group-hover:rotate-45 transition-transform duration-500" />
-              </div>
+            <div className={`relative w-9 h-9 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${
+              themeMode === 'dark' ? 'bg-white text-black' : 'bg-black text-white'
+            }`}>
+              <Globe className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
             </div>
 
             <div>
               <div className="flex items-center space-x-2">
-                <span className={`font-bold text-base sm:text-lg tracking-tight ${
-                  themeMode === 'dark' ? 'text-white' : 'text-slate-900'
+                <span className={`font-semibold text-base sm:text-lg tracking-tight ${
+                  themeMode === 'dark' ? 'text-white' : 'text-gray-900'
                 }`}>
                   May Integrated Services
                 </span>
-                <span className="hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-semibold tracking-wider uppercase rounded bg-sky-500/20 text-sky-400 border border-sky-500/30">
+                <span className={`hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded border ${
+                  themeMode === 'dark' ? 'bg-[#222] text-gray-300 border-[#333]' : 'bg-gray-100 text-gray-700 border-gray-200'
+                }`}>
                   LLP
                 </span>
               </div>
@@ -111,20 +113,17 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={link.view}
                   onClick={() => handleNavClick(link.view)}
-                  className={`px-3 py-2 rounded-xl text-xs font-semibold tracking-wide transition-all duration-200 relative ${
+                  className={`px-3 py-2 rounded-md text-xs font-semibold tracking-wide transition-all duration-200 relative ${
                     isActive
                       ? themeMode === 'dark'
-                        ? 'text-white bg-slate-800/80 shadow-inner'
-                        : 'text-sky-700 bg-sky-50 shadow-inner'
+                        ? 'text-white bg-[#222]'
+                        : 'text-black bg-gray-100'
                       : themeMode === 'dark'
-                        ? 'text-slate-300 hover:text-white hover:bg-slate-800/50'
-                        : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                        ? 'text-gray-400 hover:text-white hover:bg-[#111]'
+                        : 'text-gray-600 hover:text-black hover:bg-gray-50'
                   }`}
                 >
                   {link.label}
-                  {isActive && (
-                    <span className="absolute bottom-1 left-3 right-3 h-0.5 bg-sky-400 rounded-full" />
-                  )}
                 </button>
               );
             })}
@@ -135,10 +134,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Search Trigger */}
             <button
               onClick={onOpenSearch}
-              className={`p-2 rounded-xl transition-all ${
+              className={`p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-slate-800/80 text-slate-300 hover:text-white hover:bg-slate-700/80 border border-slate-700/60'
-                  : 'bg-slate-100 text-slate-600 hover:text-slate-900 hover:bg-slate-200 border border-slate-200'
+                  ? 'bg-[#111] text-gray-400 hover:text-white hover:bg-[#222] border border-[#222]'
+                  : 'bg-white text-gray-500 hover:text-black hover:bg-gray-50 border border-gray-200'
               }`}
               title="Search Site"
             >
@@ -148,10 +147,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Theme Mode Toggle */}
             <button
               onClick={onToggleTheme}
-              className={`p-2 rounded-xl transition-all ${
+              className={`p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-slate-800/80 text-amber-400 hover:bg-slate-700/80 border border-slate-700/60'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200'
+                  ? 'bg-[#111] text-gray-400 hover:text-white hover:bg-[#222] border border-[#222]'
+                  : 'bg-white text-gray-500 hover:text-black hover:bg-gray-50 border border-gray-200'
               }`}
               title={`Switch to ${themeMode === 'dark' ? 'Light' : 'Dark'} Mode`}
             >
@@ -161,7 +160,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Contact CTA */}
             <button
               onClick={() => handleNavClick('contact')}
-              className="hidden sm:flex items-center space-x-2 px-4 py-2 rounded-xl bg-gradient-to-r from-sky-500 via-blue-600 to-indigo-600 text-white font-semibold text-xs shadow-lg shadow-sky-500/20 hover:shadow-sky-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all duration-200"
+              className={`hidden sm:flex items-center space-x-2 px-4 py-2 rounded-md font-semibold text-xs transition-colors duration-200 ${
+                themeMode === 'dark'
+                  ? 'bg-white text-black hover:bg-gray-200'
+                  : 'bg-black text-white hover:bg-gray-800'
+              }`}
             >
               <span>Get in Touch</span>
               <ArrowRight className="w-3.5 h-3.5" />
@@ -170,10 +173,10 @@ export const Navbar: React.FC<NavbarProps> = ({
             {/* Mobile Menu Trigger */}
             <button
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className={`lg:hidden p-2 rounded-xl transition-all ${
+              className={`lg:hidden p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-slate-800 text-slate-200'
-                  : 'bg-slate-100 text-slate-800'
+                  ? 'bg-[#111] text-gray-400 hover:text-white border border-[#222]'
+                  : 'bg-white text-gray-600 hover:text-black border border-gray-200'
               }`}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -186,8 +189,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       {isMobileMenuOpen && (
         <div className={`lg:hidden fixed inset-x-0 top-[68px] bottom-0 z-40 p-6 overflow-y-auto animate-in slide-in-from-top-4 duration-300 ${
           themeMode === 'dark'
-            ? 'bg-slate-950/95 backdrop-blur-2xl text-white border-t border-slate-800'
-            : 'bg-white/95 backdrop-blur-2xl text-slate-900 border-t border-slate-200'
+            ? 'bg-[#0a0a0a] text-white border-t border-[#222]'
+            : 'bg-white text-gray-900 border-t border-gray-200'
         }`}>
           <div className="space-y-2 mb-6">
             {navLinks.map((link) => {
@@ -196,12 +199,12 @@ export const Navbar: React.FC<NavbarProps> = ({
                 <button
                   key={link.view}
                   onClick={() => handleNavClick(link.view)}
-                  className={`w-full flex items-center justify-between p-3.5 rounded-2xl text-sm font-semibold transition-all ${
+                  className={`w-full flex items-center justify-between p-3.5 rounded-md text-sm font-semibold transition-all ${
                     isActive
-                      ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/20'
+                      ? themeMode === 'dark' ? 'bg-white text-black' : 'bg-black text-white'
                       : themeMode === 'dark'
-                        ? 'text-slate-300 hover:bg-slate-800'
-                        : 'text-slate-700 hover:bg-slate-100'
+                        ? 'text-gray-400 hover:text-white hover:bg-[#111]'
+                        : 'text-gray-600 hover:text-black hover:bg-gray-50'
                   }`}
                 >
                   <span>{link.label}</span>
@@ -211,10 +214,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </div>
 
-          <div className="pt-4 border-t border-slate-800/60 space-y-3">
+          <div className={`pt-4 border-t space-y-3 ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
             <button
               onClick={() => handleNavClick('contact')}
-              className="w-full py-3.5 rounded-2xl bg-gradient-to-r from-sky-500 to-blue-600 text-white font-bold text-sm shadow-xl flex items-center justify-center space-x-2"
+              className={`w-full py-3.5 rounded-md font-semibold text-sm flex items-center justify-center space-x-2 transition-colors duration-200 ${
+                themeMode === 'dark' ? 'bg-gray-100 hover:bg-white text-gray-900' : 'bg-gray-900 hover:bg-black text-white'
+              }`}
             >
               <span>Contact May Integrated Services</span>
               <ArrowRight className="w-4 h-4" />

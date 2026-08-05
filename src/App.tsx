@@ -75,10 +75,10 @@ export default function App() {
 
   return (
     <div className={`min-h-screen relative font-sans transition-colors duration-300 selection:bg-sky-500 selection:text-white ${
-      themeMode === 'dark' ? 'bg-slate-950 text-slate-100' : 'bg-slate-50 text-slate-900'
+      themeMode === 'dark' ? 'bg-[#0a0a0a] text-gray-200' : 'bg-white text-gray-900'
     }`}>
-      {/* 3D Ambient Particles Canvas */}
-      <Particles3D themeMode={themeMode} />
+      {/* 3D Ambient Particles Canvas Removed for minimal aesthetic */}
+      {/* <Particles3D themeMode={themeMode} /> */}
 
       {/* Top Fixed Header Navbar */}
       <Navbar
