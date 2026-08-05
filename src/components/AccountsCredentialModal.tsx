@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ThemeMode } from '../types';
-import { X, Save, Plus, Loader2 } from 'lucide-react';
+import { X, Save, Plus, Loader2, ExternalLink } from 'lucide-react';
 
 interface AccountsCredentialModalProps {
   isOpen: boolean;
@@ -223,13 +223,25 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                   {data.map((row) => (
                     <div key={row.id} className="grid grid-cols-6 gap-4">
                       {['platform', 'userId', 'password', 'registeredEmailId', 'registeredMobileNumber', 'accountStatus'].map((field) => (
-                        <input
-                          key={`${row.id}-${field}`}
-                          type="text"
-                          value={row[field as keyof AccountRow] as string}
-                          onChange={(e) => handleInputChange(row.id, field as keyof AccountRow, e.target.value)}
-                          className="w-full px-3 py-2.5 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2f5539] transition-colors bg-[#a4c2f4] text-black placeholder-gray-600 border border-[#8dafe4]"
-                        />
+                        <div key={`${row.id}-${field}`} className="relative">
+                          <input
+                            type="text"
+                            value={row[field as keyof AccountRow] as string}
+                            onChange={(e) => handleInputChange(row.id, field as keyof AccountRow, e.target.value)}
+                            className="w-full px-3 py-2.5 rounded-md text-sm font-medium focus:outline-none focus:ring-2 focus:ring-[#2f5539] transition-colors bg-[#a4c2f4] text-black placeholder-gray-600 border border-[#8dafe4]"
+                          />
+                          {field === 'platform' && (row[field as keyof AccountRow] as string).startsWith('http') && (
+                            <a 
+                              href={row[field as keyof AccountRow] as string} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="absolute right-2 top-1/2 -translate-y-1/2 p-1 bg-[#2f5539] text-white rounded hover:bg-[#1d3624] transition-colors"
+                              title="Open link"
+                            >
+                              <ExternalLink className="w-3 h-3" />
+                            </a>
+                          )}
+                        </div>
                       ))}
                     </div>
                   ))}

@@ -11,12 +11,20 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method === 'GET') {
     try {
       const response = await fetch(`${scriptUrl}?tab=${encodeURIComponent(platform)}`);
-      const result = await response.json();
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (err) {
+        console.error("Non-JSON response from Google Apps Script:", text.substring(0, 200));
+        return res.status(500).json({ success: false, error: "Google Apps Script returned an invalid response. Ensure the script is deployed with 'Who has access: Anyone'." });
+      }
       
       if (!result.success) {
         return res.status(500).json({ success: false, error: result.error });
       }
       
+      res.setHeader('Cache-Control', 's-maxage=10, stale-while-revalidate=59');
       return res.status(200).json({ success: true, data: result.data });
     } catch (error: any) {
       console.error(`Error fetching Accounts Credential for ${platform}:`, error);
