@@ -28,7 +28,7 @@ import { COMPANY_INFO } from './data/companyData';
 
 export default function App() {
   const [currentView, setCurrentView] = useState<PageView>('home');
-  const [themeMode, setThemeMode] = useState<ThemeMode>('dark');
+  const [themeMode, setThemeMode] = useState<ThemeMode>('light');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
   const [credentialModalType, setCredentialModalType] = useState<'accounts' | 'users' | null>(null);

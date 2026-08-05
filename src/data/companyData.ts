@@ -529,5 +529,18 @@ export const JOB_OPENINGS: JobOpening[] = [
       'Familiarity with Amazon Buyer-Seller Messaging system',
       'Problem-solving mindset'
     ]
+  },
+  {
+    id: 'job-4',
+    title: 'Head of Operations & Business Excellence',
+    department: 'Operations',
+    type: 'Full-time',
+    location: 'On-site (Mumbai, Maharashtra, India)',
+    description: 'Lead operations for a fast-growing eCommerce company specializing in branded products. Ensure business excellence across multiple platforms and international markets.',
+    requirements: [
+      'Proven experience in eCommerce operations and business excellence',
+      'Strong leadership and team management skills',
+      'Strategic problem-solving and cross-border logistics expertise'
+    ]
   }
 ];
