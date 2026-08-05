@@ -1,5 +1,4 @@
-import { 
-  TeamMember, 
+import {
   Brand, 
   JourneyMilestone, 
   ServiceItem, 
@@ -41,12 +40,12 @@ export const COMPANY_INFO = {
     }
   ],
   experienceYears: 6,
-  email: 'mayintegratedservicesllp@gmail.com',
+  email: 'info@mayecomm.com',
   phone: '+91 9819568545',
   whatsapp: '919819568545',
   businessHours: 'Monday – Saturday: 10:00 AM – 7:00 PM (IST)',
   social: {
-    linkedin: 'https://linkedin.com/company/may-integrated-services-llp',
+    linkedin: 'https://www.linkedin.com/company/may-integrated-services-llp/',
     twitter: 'https://twitter.com/MayIntegrated',
     instagram: 'https://instagram.com/mayintegrated',
     github: 'https://github.com/mayintegrated',
@@ -56,155 +55,10 @@ export const COMPANY_INFO = {
     brandsCount: '6+',
     countriesServed: '25+',
     marketplaces: '15+',
-    teamCount: '14+',
     orderFulfillment: '99.8%',
   }
 };
 
-export const TEAM_MEMBERS: TeamMember[] = [
-  {
-    id: 'parvez-ansari',
-    name: 'Parvez Ansari',
-    role: 'Senior E-Commerce Executive',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&q=80&w=400',
-    bio: 'Drives end-to-end marketplace operations and sales velocity across international sales channels.',
-    skills: ['Amazon FBA/FBM', 'Catalog Strategy', 'Inventory Allocation', 'Listing Rank'],
-    email: 'parvez@mayintegrated.com'
-  },
-  {
-    id: 'umair-baitwala',
-    name: 'Umair Baitwala',
-    role: 'E-Commerce Executive',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=400',
-    bio: 'Specializes in product research, cross-border listing expansion, and keyword targeting.',
-    skills: ['Marketplace Research', 'SEO Keywords', 'Supplier Liaison', 'Orders Management'],
-    email: 'umair@mayintegrated.com'
-  },
-  {
-    id: 'aaquib-khan',
-    name: 'Aaquib Khan',
-    role: 'E-Commerce Executive',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&q=80&w=400',
-    bio: 'Oversees daily marketplace health metrics, buy-box algorithms, and price optimization.',
-    skills: ['Buy-Box Strategy', 'Price Automation', 'Flipkart Assured', 'Inventory Sync'],
-    email: 'aaquib@mayintegrated.com'
-  },
-  {
-    id: 'alamgir',
-    name: 'Alamgir',
-    role: 'Senior E-Commerce Manager • Customer Support • IT Support',
-    department: 'Leadership',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400',
-    bio: 'Multi-faceted operations leader orchestrating customer escalation resolution, IT infrastructure, and team workflows.',
-    skills: ['Operations Leadership', 'IT Support', 'CX Architecture', 'Cross-Team Logistics'],
-    email: 'alamgir@mayintegrated.com'
-  },
-  {
-    id: 'osama',
-    name: 'Osama',
-    role: 'E-Commerce Executive',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400',
-    bio: 'Focuses on global dropshipping compliance, product sourcing, and order tracking systems.',
-    skills: ['Dropshipping Operations', 'Global Shipping', 'Supplier QC', 'Order Fulfillment'],
-    email: 'osama@mayintegrated.com'
-  },
-  {
-    id: 'rutuja-zodpe',
-    name: 'Rutuja Zodpe',
-    role: 'Customer Support Executive',
-    department: 'Support',
-    avatar: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400',
-    bio: 'Delivers top-tier customer care, manages buyer inquiries across worldwide timezones, and ensures 5-star ratings.',
-    skills: ['Multilingual CX', 'Returns Resolution', 'Amazon Buyer Messaging', 'Feedback Management'],
-    email: 'rutuja@mayintegrated.com'
-  },
-  {
-    id: 'mustakim-bhatti',
-    name: 'Mustakim Bhatti',
-    role: 'HR • Technical Head',
-    department: 'Tech & Data',
-    avatar: 'https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&q=80&w=400',
-    bio: 'Directs talent acquisition, technical stack architecture, system integrations, and team empowerment.',
-    skills: ['Technical Architecture', 'HR Management', 'Process Engineering', 'Cloud Tools'],
-    email: 'mustakim@mayintegrated.com'
-  },
-  {
-    id: 'shekhar',
-    name: 'Shekhar',
-    role: 'E-Commerce Executive',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&q=80&w=400',
-    bio: 'Handles international marketplace onboarding, tax compliance workflows, and warehouse dispatches.',
-    skills: ['International Onboarding', 'Warehouse Dispatches', 'Tax Documentation', 'Cross-border Logistics'],
-    email: 'shekhar@mayintegrated.com'
-  },
-  {
-    id: 'shabbir',
-    name: 'Shabbir',
-    role: 'E-Commerce Executive • IT Support',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&q=80&w=400',
-    bio: 'Maintains system uptime, API connections, database integrity, and daily merchant portal syncs.',
-    skills: ['IT Support', 'API Sync', 'System Security', 'Merchant Panel Care'],
-    email: 'shabbir@mayintegrated.com'
-  },
-  {
-    id: 'tabassum-shaikh',
-    name: 'Tabassum Shaikh',
-    role: 'Listing Analyzer & Manager',
-    department: 'Executive',
-    avatar: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400',
-    bio: 'Master of A+ Content design, indexing optimization, conversion rate enhancement, and competitor audits.',
-    skills: ['Listing Optimization', 'A+ Content', 'Keyword Indexing', 'CRO Audits'],
-    email: 'tabassum@mayintegrated.com'
-  },
-  {
-    id: 'saadik',
-    name: 'Saadik',
-    role: 'Graphic Designer',
-    department: 'Design & Content',
-    avatar: 'https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?auto=format&fit=crop&q=80&w=400',
-    bio: 'Crafts luxury visual imagery, lifestyle infographics, brand identity assets, and converting ad banners.',
-    skills: ['Visual Branding', 'Product Infographics', 'UI/UX Design', '3D Asset Renderings'],
-    email: 'saadik@mayintegrated.com'
-  },
-  {
-    id: 'sachin-gawanu',
-    name: 'Sachin Gawanu',
-    role: 'E-Commerce Executive • Vibe Coder',
-    department: 'Tech & Data',
-    isVibeCoder: true,
-    avatar: 'https://images.unsplash.com/photo-1527980965255-d3b416303d12?auto=format&fit=crop&q=80&w=400',
-    bio: 'Combines hands-on e-commerce experience with modern AI vibe coding to automate workflows and build custom tools.',
-    skills: ['Vibe Coding', 'AI Automation', 'React / TypeScript', 'Workflow Bots', 'E-Commerce Scripting'],
-    email: 'sachin@mayintegrated.com'
-  },
-  {
-    id: 'manigandan-acharya',
-    name: 'Manigandan Acharya',
-    role: 'Data Analyst • Vibe Coder',
-    department: 'Tech & Data',
-    isVibeCoder: true,
-    avatar: 'https://images.unsplash.com/photo-1501196354995-cbb51c65aaea?auto=format&fit=crop&q=80&w=400',
-    bio: 'Analyzes cross-channel sales data, forecasts demand trends, and builds automated data pipelines using vibe coding.',
-    skills: ['Data Analytics', 'Vibe Coding', 'Python / SQL', 'Sales Forecasting', 'PPC Analysis'],
-    email: 'manigandan@mayintegrated.com'
-  },
-  {
-    id: 'ca-rizwan',
-    name: 'CA Rizwan',
-    role: 'In-house Chartered Accountant',
-    department: 'Finance',
-    avatar: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400',
-    bio: 'Ensures robust corporate financial governance, GST/ROC regulatory filings, transfer pricing, and audits.',
-    skills: ['Corporate Tax', 'ROC Compliance', 'International Transfer Pricing', 'Financial Governance'],
-    email: 'rizwan@mayintegrated.com'
-  }
-];
 
 export const BRANDS: Brand[] = [
   {

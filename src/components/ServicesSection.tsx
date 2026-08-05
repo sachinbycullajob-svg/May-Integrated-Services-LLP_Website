@@ -37,7 +37,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
 
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Globe2': return <Globe2 className="w-6 h-6 text-sky-400" />;
+      case 'Globe2': return <Globe2 className="w-6 h-6 text-maroon-400" />;
       case 'ShoppingBag': return <ShoppingBag className="w-6 h-6 text-amber-400" />;
       case 'Zap': return <Zap className="w-6 h-6 text-blue-400" />;
       case 'Ship': return <Ship className="w-6 h-6 text-cyan-400" />;
@@ -47,9 +47,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
       case 'BarChart3': return <BarChart3 className="w-6 h-6 text-rose-400" />;
       case 'Headphones': return <Headphones className="w-6 h-6 text-violet-400" />;
       case 'Cpu': return <Cpu className="w-6 h-6 text-amber-400 animate-pulse" />;
-      case 'LineChart': return <LineChart className="w-6 h-6 text-sky-400" />;
+      case 'LineChart': return <LineChart className="w-6 h-6 text-maroon-400" />;
       case 'Briefcase': return <Briefcase className="w-6 h-6 text-teal-400" />;
-      default: return <Sparkles className="w-6 h-6 text-sky-400" />;
+      default: return <Sparkles className="w-6 h-6 text-maroon-400" />;
     }
   };
 
@@ -59,14 +59,14 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-maroon-500/10 border border-maroon-500/30 text-maroon-400 text-xs font-semibold mb-4">
             <Cpu className="w-3.5 h-3.5" />
             <span>End-to-End E-Commerce Capabilities</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Enterprise <span className="text-sky-400">E-Commerce Services</span>
+            Enterprise <span className="text-maroon-400">E-Commerce Services</span>
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
             themeMode === 'dark' ? 'text-slate-400' : 'text-slate-600'
@@ -83,10 +83,10 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
               onClick={() => setActiveCategory(cat)}
               className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all duration-300 ${
                 activeCategory === cat
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/25 scale-105'
+                  ? 'bg-gradient-to-r from-maroon-500 to-blue-600 text-white shadow-lg shadow-maroon-500/25 scale-105'
                   : themeMode === 'dark'
                     ? 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200 shadow-sm'
+                    : 'bg-beige-50 text-slate-600 hover:text-slate-900 border border-slate-200 shadow-sm'
               }`}
             >
               <span>{cat}</span>
@@ -102,8 +102,8 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
                 onClick={() => setSelectedService(service)}
                 className={`h-full p-6 rounded-3xl border flex flex-col justify-between cursor-pointer group transition-all duration-300 ${
                   themeMode === 'dark'
-                    ? 'bg-slate-900/80 border-slate-800 hover:border-sky-500/40 hover:bg-slate-900'
-                    : 'bg-white border-slate-200 shadow-lg hover:border-sky-400'
+                    ? 'bg-slate-900/80 border-slate-800 hover:border-maroon-500/40 hover:bg-slate-900'
+                    : 'bg-beige-50 border-slate-200 shadow-lg hover:border-maroon-400'
                 }`}
               >
                 <div>
@@ -111,12 +111,12 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
                     <div className="p-3 rounded-2xl bg-slate-800/80 border border-slate-700/60 shadow-inner group-hover:scale-110 transition-transform">
                       {getServiceIcon(service.iconName)}
                     </div>
-                    <span className="text-[10px] font-mono font-bold bg-sky-500/15 text-sky-400 px-2.5 py-1 rounded-full border border-sky-500/20">
+                    <span className="text-[10px] font-mono font-bold bg-maroon-500/15 text-maroon-400 px-2.5 py-1 rounded-full border border-maroon-500/20">
                       {service.stats}
                     </span>
                   </div>
 
-                  <h3 className={`text-lg font-extrabold mb-2 group-hover:text-sky-400 transition-colors ${
+                  <h3 className={`text-lg font-extrabold mb-2 group-hover:text-maroon-400 transition-colors ${
                     themeMode === 'dark' ? 'text-white' : 'text-slate-900'
                   }`}>
                     {service.title}
@@ -129,7 +129,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
                   </p>
                 </div>
 
-                <div className={`pt-4 border-t flex items-center justify-between text-xs font-semibold text-sky-500 ${
+                <div className={`pt-4 border-t flex items-center justify-between text-xs font-semibold text-maroon-500 ${
                   themeMode === 'dark' ? 'border-slate-800/60' : 'border-slate-200'
                 }`}>
                   <span>Explore Capabilities</span>
@@ -146,7 +146,7 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
       {selectedService && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
           <div className={`w-full max-w-2xl p-6 sm:p-8 rounded-3xl border shadow-2xl relative max-h-[90vh] overflow-y-auto ${
-            themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900'
+            themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-white' : 'bg-beige-50 border-slate-200 text-slate-900'
           }`}>
             
             <button
@@ -157,11 +157,11 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
             </button>
 
             <div className="flex items-center space-x-3 mb-4">
-              <div className="p-3 rounded-2xl bg-sky-500/10 text-sky-400 border border-sky-500/20">
+              <div className="p-3 rounded-2xl bg-maroon-500/10 text-maroon-400 border border-maroon-500/20">
                 {getServiceIcon(selectedService.iconName)}
               </div>
               <div>
-                <span className="text-xs font-bold text-sky-400 uppercase tracking-widest">{selectedService.category}</span>
+                <span className="text-xs font-bold text-maroon-400 uppercase tracking-widest">{selectedService.category}</span>
                 <h3 className="text-2xl font-extrabold">{selectedService.title}</h3>
               </div>
             </div>
@@ -186,9 +186,9 @@ export const ServicesSection: React.FC<ServicesSectionProps> = ({ themeMode }) =
               ))}
             </div>
 
-            <div className="p-4 rounded-2xl bg-sky-500/10 border border-sky-500/30 flex items-center justify-between text-xs">
+            <div className="p-4 rounded-2xl bg-maroon-500/10 border border-maroon-500/30 flex items-center justify-between text-xs">
               <span className={themeMode === 'dark' ? 'text-slate-300' : 'text-slate-700'}>Operational Benchmark:</span>
-              <span className="font-bold text-sky-500">{selectedService.stats}</span>
+              <span className="font-bold text-maroon-500">{selectedService.stats}</span>
             </div>
 
           </div>

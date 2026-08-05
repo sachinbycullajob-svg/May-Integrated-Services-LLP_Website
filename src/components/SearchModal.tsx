@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { PageView, ThemeMode } from '../types';
-import { COMPANY_INFO, BRANDS, SERVICES, TEAM_MEMBERS } from '../data/companyData';
+import { COMPANY_INFO, BRANDS, SERVICES } from '../data/companyData';
 import { Search, X, ArrowRight, Building2, Crown, Cpu, Users } from 'lucide-react';
 
 interface SearchModalProps {
@@ -30,10 +30,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
     s.shortDesc.toLowerCase().includes(query.toLowerCase())
   );
 
-  const teamResults = TEAM_MEMBERS.filter((t) =>
-    t.name.toLowerCase().includes(query.toLowerCase()) ||
-    t.role.toLowerCase().includes(query.toLowerCase())
-  );
 
   const handleSelect = (view: PageView) => {
     onNavigate(view);
@@ -44,7 +40,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-start justify-center pt-20 p-4 bg-slate-950/80 backdrop-blur-md animate-in fade-in">
       <div className={`w-full max-w-2xl rounded-3xl border shadow-2xl p-6 relative ${
-        themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-white' : 'bg-white border-slate-200 text-slate-900'
+        themeMode === 'dark' ? 'bg-slate-900 border-slate-800 text-white' : 'bg-beige-50 border-slate-200 text-slate-900'
       }`}>
         
         {/* Search Bar Input */}
@@ -54,12 +50,12 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search brands, services, team, or ROC info..."
+            placeholder="Search brands, services, or ROC info..."
             autoFocus
             className={`w-full pl-12 pr-10 py-3.5 rounded-2xl text-sm transition-all ${
               themeMode === 'dark'
-                ? 'bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-sky-500'
-                : 'bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-sky-500'
+                ? 'bg-slate-950 border border-slate-800 text-white placeholder-slate-500 focus:outline-none focus:border-maroon-500'
+                : 'bg-slate-50 border border-slate-200 text-slate-900 placeholder-slate-400 focus:outline-none focus:border-maroon-500'
             }`}
           />
           <button
@@ -81,7 +77,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                 { label: 'Company Overview', view: 'about' as PageView, icon: Building2 },
                 { label: 'Brands Portfolio', view: 'brands' as PageView, icon: Crown },
                 { label: 'Services Catalog', view: 'services' as PageView, icon: Cpu },
-                { label: 'Meet the Team', view: 'team' as PageView, icon: Users },
               ].map((item) => {
                 const Icon = item.icon;
                 return (
@@ -90,7 +85,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     onClick={() => handleSelect(item.view)}
                     className="p-3 rounded-2xl bg-slate-800/50 hover:bg-slate-800 border border-slate-700/50 flex flex-col items-center justify-center space-y-1 text-center transition-colors"
                   >
-                    <Icon className="w-4 h-4 text-sky-400" />
+                    <Icon className="w-4 h-4 text-maroon-400" />
                     <span className="font-semibold text-slate-200">{item.label}</span>
                   </button>
                 );
@@ -110,7 +105,7 @@ export const SearchModal: React.FC<SearchModalProps> = ({
                     className="w-full p-3 rounded-2xl bg-slate-800/40 hover:bg-slate-800 border border-slate-700/40 flex items-center justify-between text-left transition-colors"
                   >
                     <div>
-                      <span className="font-bold text-sky-400">{b.name}</span>
+                      <span className="font-bold text-maroon-400">{b.name}</span>
                       <span className="text-slate-400 text-[11px] block">{b.category}</span>
                     </div>
                     <ArrowRight className="w-4 h-4 text-slate-500" />
@@ -142,27 +137,6 @@ export const SearchModal: React.FC<SearchModalProps> = ({
             </div>
           )}
 
-          {/* Team Results */}
-          {query.trim() && teamResults.length > 0 && (
-            <div>
-              <span className="text-[10px] font-mono font-bold uppercase text-slate-400 block mb-2">TEAM MATCHES</span>
-              <div className="space-y-2">
-                {teamResults.map((t) => (
-                  <button
-                    key={t.id}
-                    onClick={() => handleSelect('team')}
-                    className="w-full p-3 rounded-2xl bg-slate-800/40 hover:bg-slate-800 border border-slate-700/40 flex items-center justify-between text-left transition-colors"
-                  >
-                    <div>
-                      <span className="font-bold text-slate-200">{t.name}</span>
-                      <span className="text-sky-400 text-[11px] block">{t.role}</span>
-                    </div>
-                    <ArrowRight className="w-4 h-4 text-slate-500" />
-                  </button>
-                ))}
-              </div>
-            </div>
-          )}
 
         </div>
 

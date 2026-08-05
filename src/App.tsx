@@ -14,7 +14,6 @@ import { JourneySection } from './components/JourneySection';
 import { BrandsSection } from './components/BrandsSection';
 import { GlobalPresenceSection } from './components/GlobalPresenceSection';
 import { ServicesSection } from './components/ServicesSection';
-import { TeamSection } from './components/TeamSection';
 import { WhyChooseUsSection } from './components/WhyChooseUsSection';
 import { ProcessSection } from './components/ProcessSection';
 import { TestimonialsSection } from './components/TestimonialsSection';
@@ -74,8 +73,8 @@ export default function App() {
   };
 
   return (
-    <div className={`min-h-screen relative font-sans transition-colors duration-300 selection:bg-sky-500 selection:text-white ${
-      themeMode === 'dark' ? 'bg-[#0a0a0a] text-gray-200' : 'bg-white text-gray-900'
+    <div className={`min-h-screen relative font-sans transition-colors duration-300 selection:bg-maroon-500 selection:text-beige-50 ${
+      themeMode === 'dark' ? 'bg-maroon-950 text-beige-100' : 'bg-beige-100 text-maroon-950'
     }`}>
       {/* 3D Ambient Particles Canvas Removed for minimal aesthetic */}
       {/* <Particles3D themeMode={themeMode} /> */}
@@ -98,7 +97,6 @@ export default function App() {
         <ServicesSection themeMode={themeMode} />
         <ProcessSection themeMode={themeMode} />
         <WhyChooseUsSection themeMode={themeMode} />
-        <TeamSection themeMode={themeMode} />
         <GlobalPresenceSection themeMode={themeMode} />
         <CareersPage themeMode={themeMode} />
         <TestimonialsSection themeMode={themeMode} />

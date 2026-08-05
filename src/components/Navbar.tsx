@@ -41,7 +41,6 @@ export const Navbar: React.FC<NavbarProps> = ({
     { label: 'About Us', view: 'about' },
     { label: 'Brands', view: 'brands' },
     { label: 'Services', view: 'services' },
-    { label: 'Team', view: 'team' },
     { label: 'Global Network', view: 'global' },
     { label: 'Careers', view: 'careers' },
     { label: 'Contact', view: 'contact' },
@@ -67,11 +66,11 @@ export const Navbar: React.FC<NavbarProps> = ({
       <nav className={`transition-all duration-300 ${
         isScrolled
           ? themeMode === 'dark'
-            ? 'bg-[#0a0a0a]/95 backdrop-blur-md border-b border-[#222] py-3'
-            : 'bg-white/95 backdrop-blur-md border-b border-gray-200 py-3'
+            ? 'bg-maroon-950/95 backdrop-blur-md border-b border-maroon-800 py-3'
+            : 'bg-beige-50/95 backdrop-blur-md border-b border-beige-300 py-3'
           : themeMode === 'dark'
-            ? 'bg-[#0a0a0a]/80 backdrop-blur-sm py-4 border-b border-transparent'
-            : 'bg-white/80 backdrop-blur-sm py-4 border-b border-transparent'
+            ? 'bg-maroon-950/80 backdrop-blur-sm py-4 border-b border-transparent'
+            : 'bg-beige-50/80 backdrop-blur-sm py-4 border-b border-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           
@@ -81,7 +80,7 @@ export const Navbar: React.FC<NavbarProps> = ({
             className="flex items-center space-x-3 group text-left"
           >
             <div className={`relative w-9 h-9 rounded-md flex items-center justify-center transition-transform duration-300 group-hover:scale-105 ${
-              themeMode === 'dark' ? 'bg-white text-black' : 'bg-black text-white'
+              themeMode === 'dark' ? 'bg-beige-50 text-black' : 'bg-black text-white'
             }`}>
               <Globe className="w-5 h-5 group-hover:rotate-45 transition-transform duration-500" />
             </div>
@@ -89,12 +88,12 @@ export const Navbar: React.FC<NavbarProps> = ({
             <div>
               <div className="flex items-center space-x-2">
                 <span className={`font-semibold text-base sm:text-lg tracking-tight ${
-                  themeMode === 'dark' ? 'text-white' : 'text-gray-900'
+                  themeMode === 'dark' ? 'text-white' : 'text-maroon-950'
                 }`}>
                   May Integrated Services
                 </span>
                 <span className={`hidden sm:inline-block px-1.5 py-0.5 text-[10px] font-bold tracking-widest uppercase rounded border ${
-                  themeMode === 'dark' ? 'bg-[#222] text-gray-300 border-[#333]' : 'bg-gray-100 text-gray-700 border-gray-200'
+                  themeMode === 'dark' ? 'bg-maroon-800 text-beige-200 border-maroon-700' : 'bg-beige-200 text-maroon-800 border-beige-300'
                 }`}>
                   LLP
                 </span>
@@ -116,11 +115,11 @@ export const Navbar: React.FC<NavbarProps> = ({
                   className={`px-3 py-2 rounded-md text-xs font-semibold tracking-wide transition-all duration-200 relative ${
                     isActive
                       ? themeMode === 'dark'
-                        ? 'text-white bg-[#222]'
-                        : 'text-black bg-gray-100'
+                        ? 'text-white bg-maroon-800'
+                        : 'text-black bg-beige-200'
                       : themeMode === 'dark'
-                        ? 'text-gray-400 hover:text-white hover:bg-[#111]'
-                        : 'text-gray-600 hover:text-black hover:bg-gray-50'
+                        ? 'text-gray-400 hover:text-white hover:bg-maroon-900'
+                        : 'text-gray-600 hover:text-black hover:bg-beige-100'
                   }`}
                 >
                   {link.label}
@@ -136,8 +135,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={onOpenSearch}
               className={`p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-[#111] text-gray-400 hover:text-white hover:bg-[#222] border border-[#222]'
-                  : 'bg-white text-gray-500 hover:text-black hover:bg-gray-50 border border-gray-200'
+                  ? 'bg-maroon-900 text-gray-400 hover:text-white hover:bg-maroon-800 border border-maroon-800'
+                  : 'bg-beige-50 text-gray-500 hover:text-black hover:bg-beige-100 border border-beige-300'
               }`}
               title="Search Site"
             >
@@ -149,8 +148,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={onToggleTheme}
               className={`p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-[#111] text-gray-400 hover:text-white hover:bg-[#222] border border-[#222]'
-                  : 'bg-white text-gray-500 hover:text-black hover:bg-gray-50 border border-gray-200'
+                  ? 'bg-maroon-900 text-gray-400 hover:text-white hover:bg-maroon-800 border border-maroon-800'
+                  : 'bg-beige-50 text-gray-500 hover:text-black hover:bg-beige-100 border border-beige-300'
               }`}
               title={`Switch to ${themeMode === 'dark' ? 'Light' : 'Dark'} Mode`}
             >
@@ -162,7 +161,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => handleNavClick('contact')}
               className={`hidden sm:flex items-center space-x-2 px-4 py-2 rounded-md font-semibold text-xs transition-colors duration-200 ${
                 themeMode === 'dark'
-                  ? 'bg-white text-black hover:bg-gray-200'
+                  ? 'bg-beige-50 text-black hover:bg-beige-300'
                   : 'bg-black text-white hover:bg-gray-800'
               }`}
             >
@@ -175,8 +174,8 @@ export const Navbar: React.FC<NavbarProps> = ({
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               className={`lg:hidden p-2 rounded-md transition-all ${
                 themeMode === 'dark'
-                  ? 'bg-[#111] text-gray-400 hover:text-white border border-[#222]'
-                  : 'bg-white text-gray-600 hover:text-black border border-gray-200'
+                  ? 'bg-maroon-900 text-gray-400 hover:text-white border border-maroon-800'
+                  : 'bg-beige-50 text-gray-600 hover:text-black border border-beige-300'
               }`}
             >
               {isMobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
@@ -189,8 +188,8 @@ export const Navbar: React.FC<NavbarProps> = ({
       {isMobileMenuOpen && (
         <div className={`lg:hidden fixed inset-x-0 top-[68px] bottom-0 z-40 p-6 overflow-y-auto animate-in slide-in-from-top-4 duration-300 ${
           themeMode === 'dark'
-            ? 'bg-[#0a0a0a] text-white border-t border-[#222]'
-            : 'bg-white text-gray-900 border-t border-gray-200'
+            ? 'bg-maroon-950 text-white border-t border-maroon-800'
+            : 'bg-beige-50 text-maroon-950 border-t border-beige-300'
         }`}>
           <div className="space-y-2 mb-6">
             {navLinks.map((link) => {
@@ -201,10 +200,10 @@ export const Navbar: React.FC<NavbarProps> = ({
                   onClick={() => handleNavClick(link.view)}
                   className={`w-full flex items-center justify-between p-3.5 rounded-md text-sm font-semibold transition-all ${
                     isActive
-                      ? themeMode === 'dark' ? 'bg-white text-black' : 'bg-black text-white'
+                      ? themeMode === 'dark' ? 'bg-beige-50 text-black' : 'bg-black text-white'
                       : themeMode === 'dark'
-                        ? 'text-gray-400 hover:text-white hover:bg-[#111]'
-                        : 'text-gray-600 hover:text-black hover:bg-gray-50'
+                        ? 'text-gray-400 hover:text-white hover:bg-maroon-900'
+                        : 'text-gray-600 hover:text-black hover:bg-beige-100'
                   }`}
                 >
                   <span>{link.label}</span>
@@ -214,11 +213,11 @@ export const Navbar: React.FC<NavbarProps> = ({
             })}
           </div>
 
-          <div className={`pt-4 border-t space-y-3 ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
+          <div className={`pt-4 border-t space-y-3 ${themeMode === 'dark' ? 'border-maroon-800' : 'border-beige-300'}`}>
             <button
               onClick={() => handleNavClick('contact')}
               className={`w-full py-3.5 rounded-md font-semibold text-sm flex items-center justify-center space-x-2 transition-colors duration-200 ${
-                themeMode === 'dark' ? 'bg-gray-100 hover:bg-white text-gray-900' : 'bg-gray-900 hover:bg-black text-white'
+                themeMode === 'dark' ? 'bg-beige-200 hover:bg-beige-50 text-maroon-950' : 'bg-gray-900 hover:bg-black text-white'
               }`}
             >
               <span>Contact May Integrated Services</span>

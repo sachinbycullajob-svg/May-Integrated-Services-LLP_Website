@@ -143,7 +143,7 @@ export const UsersCredentialModal: React.FC<UsersCredentialModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in">
       <div className={`w-full max-w-[95vw] h-[85vh] flex overflow-hidden rounded-xl border relative shadow-2xl ${
-        themeMode === 'dark' ? 'bg-[#0a0a0a] border-[#222] text-gray-200' : 'bg-white border-gray-200 text-gray-800'
+        themeMode === 'dark' ? 'bg-maroon-950 border-maroon-800 text-beige-100' : 'bg-beige-50 border-beige-300 text-maroon-900'
       }`}>
         
         {/* Close Button */}
@@ -156,8 +156,8 @@ export const UsersCredentialModal: React.FC<UsersCredentialModalProps> = ({
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col overflow-hidden relative">
-          <div className={`p-6 pb-4 flex items-center justify-between border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
-            <h3 className={`text-lg font-semibold tracking-widest uppercase ${themeMode === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+          <div className={`p-6 pb-4 flex items-center justify-between border-b ${themeMode === 'dark' ? 'border-maroon-800' : 'border-beige-300'}`}>
+            <h3 className={`text-lg font-semibold tracking-widest uppercase ${themeMode === 'dark' ? 'text-gray-100' : 'text-maroon-950'}`}>
               Users Credential
             </h3>
             <div className="flex items-center space-x-4 mr-10">
@@ -166,7 +166,7 @@ export const UsersCredentialModal: React.FC<UsersCredentialModalProps> = ({
                 onClick={handleSave}
                 disabled={saving || loading}
                 className={`flex items-center space-x-2 px-5 py-2 rounded-md font-medium text-sm transition-colors duration-200 disabled:opacity-50 ${
-                  themeMode === 'dark' ? 'bg-gray-100 hover:bg-white text-gray-900' : 'bg-gray-900 hover:bg-black text-white'
+                  themeMode === 'dark' ? 'bg-beige-200 hover:bg-beige-50 text-maroon-950' : 'bg-gray-900 hover:bg-black text-white'
                 }`}
               >
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
@@ -220,8 +220,8 @@ export const UsersCredentialModal: React.FC<UsersCredentialModalProps> = ({
                   onClick={handleAddRow}
                   className={`mt-6 flex items-center space-x-2 px-4 py-2 rounded-md font-medium text-sm transition-colors border ${
                     themeMode === 'dark' 
-                      ? 'bg-[#111] hover:bg-[#222] border-[#333] text-gray-300' 
-                      : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700'
+                      ? 'bg-maroon-900 hover:bg-maroon-800 border-maroon-700 text-beige-200' 
+                      : 'bg-beige-50 hover:bg-beige-100 border-beige-300 text-maroon-800'
                   }`}
                 >
                   <Plus className="w-4 h-4" />

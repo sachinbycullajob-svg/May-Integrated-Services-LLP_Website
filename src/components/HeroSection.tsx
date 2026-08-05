@@ -27,23 +27,23 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
         {/* Top Badges */}
         <div className="flex flex-wrap items-center justify-center gap-3 mb-8">
           <div className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold ${
-            themeMode === 'dark' ? 'bg-[#111] border-[#222] text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-700'
+            themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800 text-beige-200' : 'bg-beige-100 border-beige-300 text-maroon-800'
           }`}>
-            <ShieldCheck className="w-4 h-4 text-sky-600" />
+            <ShieldCheck className="w-4 h-4 text-maroon-600" />
             <span>LLPIN: {COMPANY_INFO.llpin}</span>
           </div>
 
           <div className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold ${
-            themeMode === 'dark' ? 'bg-[#111] border-[#222] text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-700'
+            themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800 text-beige-200' : 'bg-beige-100 border-beige-300 text-maroon-800'
           }`}>
-            <Award className="w-4 h-4 text-sky-600" />
+            <Award className="w-4 h-4 text-maroon-600" />
             <span>6+ Years E-Commerce Excellence</span>
           </div>
 
           <div className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold ${
-            themeMode === 'dark' ? 'bg-[#111] border-[#222] text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-700'
+            themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800 text-beige-200' : 'bg-beige-100 border-beige-300 text-maroon-800'
           }`}>
-            <Globe2 className="w-4 h-4 text-sky-600" />
+            <Globe2 className="w-4 h-4 text-maroon-600" />
             <span>25+ Global Marketplaces</span>
           </div>
         </div>
@@ -51,10 +51,10 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
         {/* Hero Content */}
         <div className="space-y-6">
           <h1 className={`text-4xl sm:text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.12] ${
-            themeMode === 'dark' ? 'text-white' : 'text-gray-900'
+            themeMode === 'dark' ? 'text-white' : 'text-maroon-950'
           }`}>
             Architecting the Future of <br className="hidden sm:block" />
-            <span className="text-sky-600 dark:text-sky-500">
+            <span className="text-maroon-600 dark:text-maroon-500">
               Global E-Commerce
             </span>{' '}
             & Trade
@@ -76,7 +76,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
               'Cross-Border B2B'
             ].map(tag => (
               <span key={tag} className={`px-3 py-1.5 rounded-md border ${
-                themeMode === 'dark' ? 'bg-[#111] border-[#222] text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-700'
+                themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800 text-beige-200' : 'bg-beige-100 border-beige-300 text-maroon-800'
               }`}>
                 {tag}
               </span>
@@ -88,7 +88,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
             <button
               onClick={() => onNavigate('about')}
               className={`w-full sm:w-auto px-8 py-3.5 rounded-md font-bold text-sm transition-all flex items-center justify-center space-x-2.5 ${
-                themeMode === 'dark' ? 'bg-white text-black hover:bg-gray-200' : 'bg-gray-900 text-white hover:bg-black'
+                themeMode === 'dark' ? 'bg-beige-50 text-black hover:bg-beige-300' : 'bg-gray-900 text-white hover:bg-black'
               }`}
             >
               <span>Explore Corporate Profile</span>
@@ -99,12 +99,12 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
               onClick={() => onNavigate('contact')}
               className={`w-full sm:w-auto px-8 py-3.5 rounded-md font-bold text-sm transition-all flex items-center justify-center space-x-2 border ${
                 themeMode === 'dark'
-                  ? 'bg-[#111] text-gray-300 hover:bg-[#222] border-[#333]'
-                  : 'bg-white text-gray-700 hover:bg-gray-50 border-gray-200'
+                  ? 'bg-maroon-900 text-beige-200 hover:bg-maroon-800 border-maroon-700'
+                  : 'bg-beige-50 text-maroon-800 hover:bg-beige-100 border-beige-300'
               }`}
             >
               <span>Contact Leadership</span>
-              <Globe2 className="w-4 h-4 text-sky-600 dark:text-sky-500" />
+              <Globe2 className="w-4 h-4 text-maroon-600 dark:text-maroon-500" />
             </button>
           </div>
 
@@ -117,11 +117,7 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
             </span>
             <span>•</span>
             <span className="flex items-center">
-              <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-gray-400" /> 6 Active Brands
-            </span>
-            <span>•</span>
-            <span className="flex items-center">
-              <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-gray-400" /> 14 Specialist Team
+              <CheckCircle2 className="w-3.5 h-3.5 mr-1 text-beige-200" /> 6 Active Brands
             </span>
           </div>
 
@@ -141,15 +137,15 @@ export const HeroSection: React.FC<HeroSectionProps> = ({ onNavigate, themeMode 
                 key={idx}
                 className={`p-6 rounded-md border transition-all duration-300 ${
                   themeMode === 'dark'
-                    ? 'bg-[#111] border-[#222]'
-                    : 'bg-white border-gray-200'
+                    ? 'bg-maroon-900 border-maroon-800'
+                    : 'bg-beige-50 border-beige-300'
                 }`}
               >
                 <div className="flex items-center justify-between mb-4">
-                  <span className={`text-2xl sm:text-3xl font-extrabold ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  <span className={`text-2xl sm:text-3xl font-extrabold ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>
                     {stat.value}
                   </span>
-                  <div className={`p-2 rounded-md ${themeMode === 'dark' ? 'bg-[#222] text-sky-500' : 'bg-gray-100 text-sky-600'}`}>
+                  <div className={`p-2 rounded-md ${themeMode === 'dark' ? 'bg-maroon-800 text-maroon-500' : 'bg-beige-200 text-maroon-600'}`}>
                     <Icon className="w-5 h-5" />
                   </div>
                 </div>

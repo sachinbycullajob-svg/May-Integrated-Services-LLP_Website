@@ -23,7 +23,7 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ themeMode }) => 
 
   const getStepIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Search': return <Search className="w-5 h-5 text-sky-400" />;
+      case 'Search': return <Search className="w-5 h-5 text-maroon-400" />;
       case 'ShieldCheck': return <ShieldCheck className="w-5 h-5 text-emerald-400" />;
       case 'Layout': return <Layout className="w-5 h-5 text-indigo-400" />;
       case 'TrendingUp': return <TrendingUp className="w-5 h-5 text-amber-400" />;
@@ -39,14 +39,14 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ themeMode }) => 
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-maroon-500/10 border border-maroon-500/30 text-maroon-400 text-xs font-semibold mb-4">
             <Layers className="w-3.5 h-3.5" />
             <span>3D Operational Process Flow</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Our 7-Step <span className="text-sky-400">Execution Pipeline</span>
+            Our 7-Step <span className="text-maroon-400">Execution Pipeline</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
             A rigorous end-to-end operational framework ensuring seamless product sourcing, high-converting listings, and global fulfillment.
@@ -63,10 +63,10 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ themeMode }) => 
                 onClick={() => setActiveStep(step.stepNumber)}
                 className={`p-3 rounded-2xl text-center transition-all duration-300 flex flex-col items-center justify-between border ${
                   isSelected
-                    ? 'bg-gradient-to-b from-sky-500 to-blue-600 text-white border-sky-400 shadow-lg shadow-sky-500/30 scale-105'
+                    ? 'bg-gradient-to-b from-maroon-500 to-blue-600 text-white border-maroon-400 shadow-lg shadow-maroon-500/30 scale-105'
                     : themeMode === 'dark'
                       ? 'bg-slate-900/80 text-slate-400 hover:text-white border-slate-800'
-                      : 'bg-white text-slate-600 hover:text-slate-900 border-slate-200 shadow-sm'
+                      : 'bg-beige-50 text-slate-600 hover:text-slate-900 border-slate-200 shadow-sm'
                 }`}
               >
                 <span className="text-[10px] font-mono font-bold uppercase block opacity-80">
@@ -87,23 +87,23 @@ export const ProcessSection: React.FC<ProcessSectionProps> = ({ themeMode }) => 
             <Card3DTilt glowColor="rgba(56, 189, 248, 0.25)">
               <div className={`p-8 sm:p-10 rounded-3xl border transition-all duration-300 ${
                 themeMode === 'dark'
-                  ? 'bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border-sky-500/40 shadow-2xl'
-                  : 'bg-white border-sky-300 shadow-xl'
+                  ? 'bg-gradient-to-br from-slate-900 via-slate-900 to-slate-950 border-maroon-500/40 shadow-2xl'
+                  : 'bg-beige-50 border-sky-300 shadow-xl'
               }`}>
                 
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="p-4 rounded-2xl bg-sky-500/10 text-sky-400 border border-sky-500/30 shadow-inner">
+                    <div className="p-4 rounded-2xl bg-maroon-500/10 text-maroon-400 border border-maroon-500/30 shadow-inner">
                       {getStepIcon(step.iconName)}
                     </div>
                     <div>
-                      <span className="text-xs font-mono font-bold text-sky-400 uppercase tracking-widest">
+                      <span className="text-xs font-mono font-bold text-maroon-400 uppercase tracking-widest">
                         PHASE 0{step.stepNumber} WORKFLOW
                       </span>
                       <h3 className={`text-2xl font-extrabold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
                         {step.title}
                       </h3>
-                      <p className="text-xs font-semibold text-sky-400">{step.subtitle}</p>
+                      <p className="text-xs font-semibold text-maroon-400">{step.subtitle}</p>
                     </div>
                   </div>
 

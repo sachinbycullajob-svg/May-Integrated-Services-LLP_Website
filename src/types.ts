@@ -5,23 +5,10 @@ export type PageView =
   | 'about' 
   | 'brands' 
   | 'services' 
-  | 'team' 
   | 'global' 
   | 'careers' 
   | 'contact';
 
-export interface TeamMember {
-  id: string;
-  name: string;
-  role: string;
-  department: 'Leadership' | 'Executive' | 'Tech & Data' | 'Support' | 'Design & Content' | 'Finance';
-  isVibeCoder?: boolean;
-  avatar: string;
-  bio: string;
-  skills: string[];
-  linkedin?: string;
-  email?: string;
-}
 
 export interface Brand {
   id: string;

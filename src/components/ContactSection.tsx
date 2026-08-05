@@ -74,15 +74,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <div className={`inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full border text-xs font-semibold mb-4 ${
-            themeMode === 'dark' ? 'bg-[#111] border-[#222] text-gray-300' : 'bg-gray-50 border-gray-200 text-gray-700'
+            themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800 text-beige-200' : 'bg-beige-100 border-beige-300 text-maroon-800'
           }`}>
             <Mail className="w-3.5 h-3.5" />
             <span>Connect With Leadership</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
-            themeMode === 'dark' ? 'text-white' : 'text-gray-900'
+            themeMode === 'dark' ? 'text-white' : 'text-maroon-950'
           }`}>
-            Contact <span className="text-sky-600 dark:text-sky-500">May Integrated Services LLP</span>
+            Contact <span className="text-maroon-600 dark:text-maroon-500">May Integrated Services LLP</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
             We welcome inquiries from marketplace partners, international suppliers, brand collaborators, and potential venture associates.
@@ -95,15 +95,15 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
           <div className="lg:col-span-7">
             <div className={`p-8 rounded-md border ${
               themeMode === 'dark'
-                ? 'bg-[#111] border-[#222]'
-                : 'bg-white border-gray-200 shadow-sm'
+                ? 'bg-maroon-900 border-maroon-800'
+                : 'bg-beige-50 border-beige-300 shadow-sm'
             }`}>
               
-              <h3 className={`text-xl font-extrabold mb-2 ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              <h3 className={`text-xl font-extrabold mb-2 ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>
                 Send Corporate Inquiry
               </h3>
               <p className={`text-xs mb-6 ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-500'}`}>
-                All inquiries are delivered directly to <span className="text-sky-600 dark:text-sky-500 font-semibold">{COMPANY_INFO.email}</span> and logged securely.
+                All inquiries are delivered directly to <span className="text-maroon-600 dark:text-maroon-500 font-semibold">{COMPANY_INFO.email}</span> and logged securely.
               </p>
 
               {isSubmitted ? (
@@ -133,8 +133,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                         placeholder="John Doe"
                         className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                           themeMode === 'dark'
-                            ? 'bg-[#0a0a0a] border border-[#333] text-white placeholder-gray-600 focus:border-sky-500'
-                            : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-sky-500'
+                            ? 'bg-maroon-950 border border-maroon-700 text-white placeholder-gray-600 focus:border-maroon-500'
+                            : 'bg-beige-50 border border-gray-300 text-maroon-950 placeholder-gray-400 focus:border-maroon-500'
                         }`}
                       />
                     </div>
@@ -149,8 +149,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                         placeholder="john@company.com"
                         className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                           themeMode === 'dark'
-                            ? 'bg-[#0a0a0a] border border-[#333] text-white placeholder-gray-600 focus:border-sky-500'
-                            : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-sky-500'
+                            ? 'bg-maroon-950 border border-maroon-700 text-white placeholder-gray-600 focus:border-maroon-500'
+                            : 'bg-beige-50 border border-gray-300 text-maroon-950 placeholder-gray-400 focus:border-maroon-500'
                         }`}
                       />
                     </div>
@@ -166,8 +166,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                         placeholder="+91 9819568545"
                         className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                           themeMode === 'dark'
-                            ? 'bg-[#0a0a0a] border border-[#333] text-white placeholder-gray-600 focus:border-sky-500'
-                            : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-sky-500'
+                            ? 'bg-maroon-950 border border-maroon-700 text-white placeholder-gray-600 focus:border-maroon-500'
+                            : 'bg-beige-50 border border-gray-300 text-maroon-950 placeholder-gray-400 focus:border-maroon-500'
                         }`}
                       />
                     </div>
@@ -181,8 +181,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                         placeholder="Apex Brands Inc."
                         className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                           themeMode === 'dark'
-                            ? 'bg-[#0a0a0a] border border-[#333] text-white placeholder-gray-600 focus:border-sky-500'
-                            : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-sky-500'
+                            ? 'bg-maroon-950 border border-maroon-700 text-white placeholder-gray-600 focus:border-maroon-500'
+                            : 'bg-beige-50 border border-gray-300 text-maroon-950 placeholder-gray-400 focus:border-maroon-500'
                         }`}
                       />
                     </div>
@@ -195,8 +195,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                       onChange={(e) => setFormData({ ...formData, inquiryType: e.target.value })}
                       className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                         themeMode === 'dark'
-                          ? 'bg-[#0a0a0a] border border-[#333] text-white focus:border-sky-500'
-                          : 'bg-white border border-gray-300 text-gray-900 focus:border-sky-500'
+                          ? 'bg-maroon-950 border border-maroon-700 text-white focus:border-maroon-500'
+                          : 'bg-beige-50 border border-gray-300 text-maroon-950 focus:border-maroon-500'
                       }`}
                     >
                       <option>Partnership Inquiry</option>
@@ -217,8 +217,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                       placeholder="Please share details regarding your inquiry..."
                       className={`w-full px-4 py-2.5 rounded-md text-xs transition-all ${
                         themeMode === 'dark'
-                          ? 'bg-[#0a0a0a] border border-[#333] text-white placeholder-gray-600 focus:border-sky-500'
-                          : 'bg-white border border-gray-300 text-gray-900 placeholder-gray-400 focus:border-sky-500'
+                          ? 'bg-maroon-950 border border-maroon-700 text-white placeholder-gray-600 focus:border-maroon-500'
+                          : 'bg-beige-50 border border-gray-300 text-maroon-950 placeholder-gray-400 focus:border-maroon-500'
                       }`}
                     />
                   </div>
@@ -227,7 +227,7 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                     type="submit"
                     disabled={isSubmitting}
                     className={`w-full py-3.5 rounded-md font-bold text-xs transition-all flex items-center justify-center space-x-2 disabled:opacity-50 ${
-                      themeMode === 'dark' ? 'bg-white text-black hover:bg-gray-200' : 'bg-gray-900 text-white hover:bg-black'
+                      themeMode === 'dark' ? 'bg-beige-50 text-black hover:bg-beige-300' : 'bg-gray-900 text-white hover:bg-black'
                     }`}
                   >
                     <span>{isSubmitting ? 'Sending Inquiry...' : 'Submit Corporate Inquiry'}</span>
@@ -245,10 +245,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
             {/* Direct Contact Details Card */}
             <div className={`p-6 rounded-md border ${
               themeMode === 'dark'
-                ? 'bg-[#111] border-[#222]'
-                : 'bg-white border-gray-200 shadow-sm'
+                ? 'bg-maroon-900 border-maroon-800'
+                : 'bg-beige-50 border-beige-300 shadow-sm'
             }`}>
-              <h4 className={`text-base font-bold mb-4 ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+              <h4 className={`text-base font-bold mb-4 ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>
                 Direct Corporate Contact
               </h4>
 
@@ -257,11 +257,11 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                   href={`mailto:${COMPANY_INFO.email}`} 
                   className={`flex items-center space-x-3 p-3 rounded-md border font-semibold transition-colors ${
                     themeMode === 'dark'
-                      ? 'bg-[#0a0a0a] hover:bg-[#222] border-[#333] text-sky-400'
-                      : 'bg-gray-50 hover:bg-gray-100 border-gray-200 text-sky-600'
+                      ? 'bg-maroon-950 hover:bg-maroon-800 border-maroon-700 text-maroon-400'
+                      : 'bg-beige-100 hover:bg-beige-200 border-beige-300 text-maroon-600'
                   }`}
                 >
-                  <Mail className="w-4 h-4 text-sky-500 flex-shrink-0" />
+                  <Mail className="w-4 h-4 text-maroon-500 flex-shrink-0" />
                   <span className="truncate">{COMPANY_INFO.email}</span>
                 </a>
 
@@ -269,8 +269,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                   href={`tel:${COMPANY_INFO.phone}`} 
                   className={`flex items-center space-x-3 p-3 rounded-md border font-semibold transition-colors ${
                     themeMode === 'dark'
-                      ? 'bg-[#0a0a0a] hover:bg-[#222] border-[#333] text-gray-300'
-                      : 'bg-gray-50 hover:bg-gray-100 border-gray-200 text-gray-800'
+                      ? 'bg-maroon-950 hover:bg-maroon-800 border-maroon-700 text-beige-200'
+                      : 'bg-beige-100 hover:bg-beige-200 border-beige-300 text-maroon-900'
                   }`}
                 >
                   <Phone className="w-4 h-4 text-emerald-500 flex-shrink-0" />
@@ -282,18 +282,18 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
             {/* Address Card */}
             <div className={`p-6 rounded-md border ${
               themeMode === 'dark'
-                ? 'bg-[#111] border-[#222]'
-                : 'bg-white border-gray-200 shadow-sm'
+                ? 'bg-maroon-900 border-maroon-800'
+                : 'bg-beige-50 border-beige-300 shadow-sm'
             }`}>
               <div className="flex items-center space-x-3 mb-4">
-                <div className={`p-3 rounded-md ${themeMode === 'dark' ? 'bg-[#222] text-sky-500' : 'bg-gray-100 text-sky-600'}`}>
+                <div className={`p-3 rounded-md ${themeMode === 'dark' ? 'bg-maroon-800 text-maroon-500' : 'bg-beige-200 text-maroon-600'}`}>
                   <MapPin className="w-5 h-5" />
                 </div>
                 <div>
-                  <h4 className={`text-base font-bold ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+                  <h4 className={`text-base font-bold ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>
                     Registered Office
                   </h4>
-                  <span className="text-[10px] text-sky-600 dark:text-sky-500 font-semibold">ROC Mumbai</span>
+                  <span className="text-[10px] text-maroon-600 dark:text-maroon-500 font-semibold">ROC Mumbai</span>
                 </div>
               </div>
 
@@ -307,8 +307,8 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
                 onClick={copyAddress}
                 className={`w-full py-2.5 rounded-md text-xs font-semibold transition-colors flex items-center justify-center space-x-1.5 border ${
                   themeMode === 'dark'
-                    ? 'bg-[#0a0a0a] hover:bg-[#222] text-sky-400 border-[#333]'
-                    : 'bg-gray-50 hover:bg-gray-100 text-sky-700 border-gray-200'
+                    ? 'bg-maroon-950 hover:bg-maroon-800 text-maroon-400 border-maroon-700'
+                    : 'bg-beige-100 hover:bg-beige-200 text-sky-700 border-beige-300'
                 }`}
               >
                 {copiedAddress ? <Check className="w-3.5 h-3.5 text-emerald-500" /> : <Copy className="w-3.5 h-3.5" />}
@@ -336,12 +336,12 @@ export const ContactSection: React.FC<ContactSectionProps> = ({ themeMode }) => 
             {/* Business Hours */}
             <div className={`p-6 rounded-md border ${
               themeMode === 'dark'
-                ? 'bg-[#111] border-[#222]'
-                : 'bg-white border-gray-200 shadow-sm'
+                ? 'bg-maroon-900 border-maroon-800'
+                : 'bg-beige-50 border-beige-300 shadow-sm'
             }`}>
               <div className="flex items-center space-x-3 mb-2">
-                <Clock className="w-4 h-4 text-sky-500" />
-                <span className={`text-xs font-bold ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>Business Hours</span>
+                <Clock className="w-4 h-4 text-maroon-500" />
+                <span className={`text-xs font-bold ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>Business Hours</span>
               </div>
               <p className={`text-xs ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`}>{COMPANY_INFO.businessHours}</p>
             </div>

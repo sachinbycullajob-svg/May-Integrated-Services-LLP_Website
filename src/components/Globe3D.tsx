@@ -279,10 +279,10 @@ export const Globe3D: React.FC<Globe3DProps> = ({ onSelectHub, activeHubId, them
 
       {/* Control Overlay */}
       <div className="absolute top-4 left-4 z-20 flex items-center space-x-2 bg-slate-900/80 backdrop-blur-md px-3 py-1.5 rounded-full border border-slate-700/60 text-xs text-slate-300">
-        <Sparkles className="w-3.5 h-3.5 text-sky-400 animate-pulse" />
+        <Sparkles className="w-3.5 h-3.5 text-maroon-400 animate-pulse" />
         <button
           onClick={() => setIsAutoRotating(!isAutoRotating)}
-          className="ml-1 p-1 hover:bg-slate-800 rounded-full transition-colors text-sky-400 flex items-center space-x-1"
+          className="ml-1 p-1 hover:bg-slate-800 rounded-full transition-colors text-maroon-400 flex items-center space-x-1"
           title="Toggle Auto Rotation"
         >
           <RotateCcw className={`w-3.5 h-3.5 ${isAutoRotating ? 'animate-spin' : ''}`} />
@@ -303,11 +303,11 @@ export const Globe3D: React.FC<Globe3DProps> = ({ onSelectHub, activeHubId, them
               }}
               className={`px-3 py-1.5 rounded-xl text-xs font-medium whitespace-nowrap transition-all duration-300 flex items-center space-x-1.5 ${
                 isSelected
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/25 scale-105'
+                  ? 'bg-gradient-to-r from-maroon-500 to-blue-600 text-white shadow-lg shadow-maroon-500/25 scale-105'
                   : 'text-slate-400 hover:text-white hover:bg-slate-800/80'
               }`}
             >
-              <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-sky-400'}`} />
+              <MapPin className={`w-3 h-3 ${isSelected ? 'text-white' : 'text-maroon-400'}`} />
               <span>{hub.city}</span>
             </button>
           );

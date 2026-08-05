@@ -27,7 +27,7 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsSectionProps> = ({ themeMod
       title: 'Vibe Code & AI Automation',
       description: 'In-house vibe coders build custom AI bots and scripts to automate price matching, stock alerts, and cataloging in real-time.',
       icon: Cpu,
-      color: 'text-sky-400',
+      color: 'text-maroon-400',
     },
     {
       title: 'Cross-Border Dropshipping Engine',
@@ -49,14 +49,14 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsSectionProps> = ({ themeMod
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-maroon-500/10 border border-maroon-500/30 text-maroon-400 text-xs font-semibold mb-4">
             <Zap className="w-3.5 h-3.5" />
             <span>Competitive Advantage</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Why Industry Leaders Trust <span className="text-sky-400">May Integrated</span>
+            Why Industry Leaders Trust <span className="text-maroon-400">May Integrated</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
             Combining human marketplace expertise with cutting-edge AI vibe code tools to deliver superior sales growth and logistics SLA.
@@ -72,8 +72,8 @@ export const WhyChooseUsSection: React.FC<WhyChooseUsSectionProps> = ({ themeMod
                 key={idx}
                 className={`p-7 rounded-3xl border transition-all duration-300 ${
                   themeMode === 'dark'
-                    ? 'bg-slate-900/80 border-slate-800 hover:border-sky-500/40'
-                    : 'bg-white border-slate-200 shadow-xl hover:border-sky-400'
+                    ? 'bg-slate-900/80 border-slate-800 hover:border-maroon-500/40'
+                    : 'bg-beige-50 border-slate-200 shadow-xl hover:border-maroon-400'
                 }`}
               >
                 <div className="p-3.5 w-12 h-12 rounded-2xl bg-slate-800/80 border border-slate-700/60 mb-5 flex items-center justify-center">

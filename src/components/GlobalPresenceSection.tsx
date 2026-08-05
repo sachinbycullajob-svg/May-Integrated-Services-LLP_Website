@@ -26,14 +26,14 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-maroon-500/10 border border-maroon-500/30 text-maroon-400 text-xs font-semibold mb-4">
             <Globe2 className="w-3.5 h-3.5" />
             <span>Worldwide Operations & Trade Lanes</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Global Marketplace <span className="text-sky-400">Footprint</span>
+            Global Marketplace <span className="text-maroon-400">Footprint</span>
           </h2>
           <p className="mt-3 text-sm sm:text-base text-slate-400 leading-relaxed">
             From our command center in Grant Road, Mumbai to key fulfillment nodes in North America, Europe, Asia, and the Middle East.
@@ -44,12 +44,12 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
         <div className={`p-6 sm:p-8 rounded-3xl border mb-12 relative overflow-hidden ${
           themeMode === 'dark'
             ? 'bg-slate-900/90 border-slate-800 shadow-2xl'
-            : 'bg-white border-slate-200 shadow-xl'
+            : 'bg-beige-50 border-slate-200 shadow-xl'
         }`}>
           
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6 mb-8 pb-6 border-b border-slate-800">
             <div>
-              <span className="text-xs font-mono text-sky-400 font-bold uppercase tracking-wider">
+              <span className="text-xs font-mono text-maroon-400 font-bold uppercase tracking-wider">
                 ACTIVE FULFILLMENT NETWORK
               </span>
               <h3 className={`text-xl font-bold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
@@ -58,8 +58,8 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
             </div>
 
             <div className="flex items-center space-x-4 text-xs">
-              <div className="flex items-center space-x-2 text-sky-400">
-                <span className="w-2.5 h-2.5 rounded-full bg-sky-400 animate-ping" />
+              <div className="flex items-center space-x-2 text-maroon-400">
+                <span className="w-2.5 h-2.5 rounded-full bg-maroon-400 animate-ping" />
                 <span className="font-semibold">HQ Node</span>
               </div>
               <div className="flex items-center space-x-2 text-emerald-400">
@@ -127,8 +127,8 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
                       isHq
                         ? 'bg-rose-500 text-white shadow-lg shadow-rose-500/50'
                         : isSelected
-                          ? 'bg-sky-500 text-white shadow-lg shadow-sky-500/50 scale-110'
-                          : 'bg-slate-900 text-sky-400 border border-slate-700 hover:border-sky-400'
+                          ? 'bg-maroon-500 text-white shadow-lg shadow-maroon-500/50 scale-110'
+                          : 'bg-slate-900 text-maroon-400 border border-slate-700 hover:border-maroon-400'
                     }`}>
                       <MapPin className="w-4 h-4" />
                     </div>
@@ -136,7 +136,7 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
                     {/* Tooltip Label */}
                     <span className={`absolute top-full left-1/2 -translate-x-1/2 mt-1 px-2 py-0.5 rounded text-[10px] font-bold whitespace-nowrap transition-all ${
                       isSelected
-                        ? 'bg-sky-500 text-white shadow-md'
+                        ? 'bg-maroon-500 text-white shadow-md'
                         : 'bg-slate-900/90 text-slate-300 border border-slate-700'
                     }`}>
                       {hub.city}
@@ -151,9 +151,9 @@ export const GlobalPresenceSection: React.FC<GlobalPresenceSectionProps> = ({ th
           {/* Selected Hub Detail Card */}
           <div className="mt-8 p-6 rounded-2xl bg-slate-950/80 border border-slate-800 grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
             <div>
-              <span className="text-[10px] font-mono font-bold text-sky-400 uppercase">SELECTED REGIONAL NODE</span>
+              <span className="text-[10px] font-mono font-bold text-maroon-400 uppercase">SELECTED REGIONAL NODE</span>
               <h4 className="text-lg font-extrabold text-white mt-1">{selectedHub.city}, {selectedHub.country}</h4>
-              <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-sky-500/20 text-sky-300 text-[10px] font-semibold">
+              <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-maroon-500/20 text-sky-300 text-[10px] font-semibold">
                 {selectedHub.type}
               </span>
             </div>

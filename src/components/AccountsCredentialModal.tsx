@@ -138,7 +138,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in">
       <div className={`w-full max-w-[95vw] h-[85vh] flex overflow-hidden rounded-xl border relative shadow-2xl ${
-        themeMode === 'dark' ? 'bg-[#0a0a0a] border-[#222] text-gray-200' : 'bg-white border-gray-200 text-gray-800'
+        themeMode === 'dark' ? 'bg-maroon-950 border-maroon-800 text-beige-100' : 'bg-beige-50 border-beige-300 text-maroon-900'
       }`}>
         
         {/* Close Button */}
@@ -151,10 +151,10 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Left Navigation Panel */}
         <div className={`w-48 flex-shrink-0 border-r flex flex-col ${
-          themeMode === 'dark' ? 'bg-[#111] border-[#222]' : 'bg-gray-50 border-gray-200'
+          themeMode === 'dark' ? 'bg-maroon-900 border-maroon-800' : 'bg-beige-100 border-beige-300'
         }`}>
-          <div className={`p-6 border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
-            <h2 className={`text-sm tracking-widest uppercase font-bold ${themeMode === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
+          <div className={`p-6 border-b ${themeMode === 'dark' ? 'border-maroon-800' : 'border-beige-300'}`}>
+            <h2 className={`text-sm tracking-widest uppercase font-bold ${themeMode === 'dark' ? 'text-gray-100' : 'text-maroon-950'}`}>
               Accounts Credential
             </h2>
           </div>
@@ -165,8 +165,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                 onClick={() => setActiveTab(tab)}
                 className={`w-full text-left px-4 py-2.5 rounded-md transition-colors duration-200 text-sm font-medium ${
                   activeTab === tab
-                    ? (themeMode === 'dark' ? 'bg-gray-100 text-gray-900' : 'bg-gray-900 text-white')
-                    : `hover:bg-gray-200/50 dark:hover:bg-[#222] ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`
+                    ? (themeMode === 'dark' ? 'bg-beige-200 text-maroon-950' : 'bg-gray-900 text-white')
+                    : `hover:bg-beige-300/50 dark:hover:bg-maroon-800 ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`
                 }`}
               >
                 {tab}
@@ -177,8 +177,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col overflow-hidden relative">
-          <div className={`p-6 pb-4 flex items-center justify-between border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
-            <h3 className={`text-lg font-semibold ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
+          <div className={`p-6 pb-4 flex items-center justify-between border-b ${themeMode === 'dark' ? 'border-maroon-800' : 'border-beige-300'}`}>
+            <h3 className={`text-lg font-semibold ${themeMode === 'dark' ? 'text-white' : 'text-maroon-950'}`}>
               {activeTab}
             </h3>
             <div className="flex items-center space-x-4 mr-10">
@@ -187,7 +187,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                 onClick={handleSave}
                 disabled={saving || loading}
                 className={`flex items-center space-x-2 px-5 py-2 rounded-md font-medium text-sm transition-colors duration-200 disabled:opacity-50 ${
-                  themeMode === 'dark' ? 'bg-gray-100 hover:bg-white text-gray-900' : 'bg-gray-900 hover:bg-black text-white'
+                  themeMode === 'dark' ? 'bg-beige-200 hover:bg-beige-50 text-maroon-950' : 'bg-gray-900 hover:bg-black text-white'
                 }`}
               >
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
@@ -251,8 +251,8 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                   onClick={handleAddRow}
                   className={`mt-6 flex items-center space-x-2 px-4 py-2 rounded-md font-medium text-sm transition-colors border ${
                     themeMode === 'dark' 
-                      ? 'bg-[#111] hover:bg-[#222] border-[#333] text-gray-300' 
-                      : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700'
+                      ? 'bg-maroon-900 hover:bg-maroon-800 border-maroon-700 text-beige-200' 
+                      : 'bg-beige-50 hover:bg-beige-100 border-beige-300 text-maroon-800'
                   }`}
                 >
                   <Plus className="w-4 h-4" />

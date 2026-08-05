@@ -34,7 +34,7 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
       case 'Globe2': return <Globe2 className="w-6 h-6 text-pink-400" />;
       case 'Building2': return <Building2 className="w-6 h-6 text-blue-400" />;
       case 'ShoppingCart': return <ShoppingCart className="w-6 h-6 text-emerald-400" />;
-      default: return <Sparkles className="w-6 h-6 text-sky-400" />;
+      default: return <Sparkles className="w-6 h-6 text-maroon-400" />;
     }
   };
 
@@ -44,14 +44,14 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
         
         {/* Header */}
         <div className="text-center max-w-3xl mx-auto mb-12">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-sky-500/10 border border-sky-500/30 text-sky-400 text-xs font-semibold mb-4">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1.5 rounded-full bg-maroon-500/10 border border-maroon-500/30 text-maroon-400 text-xs font-semibold mb-4">
             <Crown className="w-3.5 h-3.5" />
             <span>Brand Portfolio & Dropshipping Division</span>
           </div>
           <h2 className={`text-3xl sm:text-4xl font-extrabold tracking-tight ${
             themeMode === 'dark' ? 'text-white' : 'text-slate-900'
           }`}>
-            Our Portfolio of <span className="text-sky-400">Global Brands</span>
+            Our Portfolio of <span className="text-maroon-400">Global Brands</span>
           </h2>
           <p className={`mt-3 text-sm sm:text-base leading-relaxed ${
             themeMode === 'dark' ? 'text-slate-400' : 'text-slate-600'
@@ -68,10 +68,10 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
               onClick={() => setFilter(tab)}
               className={`px-4 py-2 rounded-2xl text-xs font-bold transition-all duration-300 flex items-center space-x-1.5 ${
                 filter === tab
-                  ? 'bg-gradient-to-r from-sky-500 to-blue-600 text-white shadow-lg shadow-sky-500/25 scale-105'
+                  ? 'bg-gradient-to-r from-maroon-500 to-blue-600 text-white shadow-lg shadow-maroon-500/25 scale-105'
                   : themeMode === 'dark'
                     ? 'bg-slate-900 text-slate-400 hover:text-white border border-slate-800'
-                    : 'bg-white text-slate-600 hover:text-slate-900 border border-slate-200'
+                    : 'bg-beige-50 text-slate-600 hover:text-slate-900 border border-slate-200'
               }`}
             >
               <span>{tab}</span>
@@ -85,8 +85,8 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
             <Card3DTilt key={brand.id} glowColor="rgba(56, 189, 248, 0.2)">
               <div className={`h-full p-7 rounded-3xl border flex flex-col justify-between transition-all duration-300 ${
                 themeMode === 'dark'
-                  ? 'bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950 border-slate-800 hover:border-sky-500/40'
-                  : 'bg-white border-slate-200 shadow-xl hover:border-sky-400'
+                  ? 'bg-gradient-to-b from-slate-900/90 via-slate-900/70 to-slate-950 border-slate-800 hover:border-maroon-500/40'
+                  : 'bg-beige-50 border-slate-200 shadow-xl hover:border-maroon-400'
               }`}>
                 
                 <div>
@@ -97,7 +97,7 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
                     </div>
                     <div className="flex flex-col items-end">
                       <span className="text-[10px] font-mono uppercase font-bold text-slate-400">ESTABLISHED</span>
-                      <span className="text-sm font-extrabold text-sky-400">{brand.year}</span>
+                      <span className="text-sm font-extrabold text-maroon-400">{brand.year}</span>
                     </div>
                   </div>
 
@@ -115,7 +115,7 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
                         </span>
                       )}
                     </div>
-                    <p className="text-xs font-semibold text-sky-400">{brand.category}</p>
+                    <p className="text-xs font-semibold text-maroon-400">{brand.category}</p>
                   </div>
 
                   <p className={`text-xs leading-relaxed mb-6 ${
@@ -160,7 +160,7 @@ export const BrandsSection: React.FC<BrandsSectionProps> = ({ themeMode, onSelec
                         <span className={`text-[10px] block ${
                           themeMode === 'dark' ? 'text-slate-400' : 'text-slate-500'
                         }`}>{stat.label}</span>
-                        <span className="font-bold text-sky-500">{stat.value}</span>
+                        <span className="font-bold text-maroon-500">{stat.value}</span>
                       </div>
                     ))}
                   </div>
