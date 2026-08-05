@@ -49,7 +49,7 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
       try {
         result = await res.json();
       } catch (e) {
-        throw new Error('Server returned an invalid response. API might not be running.');
+        throw new Error('API Configuration Required: The backend service is currently unreachable or not deployed on this environment.');
       }
       
       if (result.success) {
@@ -116,13 +116,12 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
       try {
         result = await res.json();
       } catch (e) {
-        throw new Error('Server returned an invalid response. API might not be running.');
+        throw new Error('API Configuration Required: The backend service is unreachable.');
       }
 
       if (result.success) {
-        setSuccessMsg('Data saved successfully!');
+        setSuccessMsg('Data saved successfully');
         setTimeout(() => setSuccessMsg(''), 3000);
-        // Remove isNew flags
         setData((prev) => prev.map((r) => ({ ...r, isNew: false })));
       } else {
         setError(result.error || 'Failed to save data');
@@ -137,9 +136,9 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/90 animate-in fade-in">
-      <div className={`w-full max-w-6xl h-[85vh] flex overflow-hidden rounded-xl border relative ${
-        themeMode === 'dark' ? 'bg-slate-900 border-slate-700 text-slate-200' : 'bg-white border-slate-300 text-slate-800'
+    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 animate-in fade-in">
+      <div className={`w-full max-w-6xl h-[85vh] flex overflow-hidden rounded-xl border relative shadow-2xl ${
+        themeMode === 'dark' ? 'bg-[#0a0a0a] border-[#222] text-gray-200' : 'bg-white border-gray-200 text-gray-800'
       }`}>
         
         {/* Close Button */}
@@ -152,22 +151,22 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Left Navigation Panel */}
         <div className={`w-64 flex-shrink-0 border-r flex flex-col ${
-          themeMode === 'dark' ? 'bg-slate-800 border-slate-700' : 'bg-slate-100 border-slate-300'
+          themeMode === 'dark' ? 'bg-[#111] border-[#222]' : 'bg-gray-50 border-gray-200'
         }`}>
-          <div className="p-6 border-b border-slate-700/50 dark:border-slate-700">
-            <h2 className={`text-lg font-bold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+          <div className={`p-6 border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
+            <h2 className={`text-sm tracking-widest uppercase font-bold ${themeMode === 'dark' ? 'text-gray-100' : 'text-gray-900'}`}>
               Accounts Credential
             </h2>
           </div>
-          <div className="flex-1 overflow-y-auto p-4 space-y-2">
+          <div className="flex-1 overflow-y-auto p-4 space-y-1">
             {TABS.map((tab) => (
               <button
                 key={tab}
                 onClick={() => setActiveTab(tab)}
-                className={`w-full text-left px-4 py-3 rounded-lg transition-colors duration-200 text-sm font-medium ${
+                className={`w-full text-left px-4 py-2.5 rounded-md transition-colors duration-200 text-sm font-medium ${
                   activeTab === tab
-                    ? 'bg-blue-600 text-white'
-                    : `hover:bg-slate-200 dark:hover:bg-slate-700 ${themeMode === 'dark' ? 'text-slate-300' : 'text-slate-700'}`
+                    ? (themeMode === 'dark' ? 'bg-gray-100 text-gray-900' : 'bg-gray-900 text-white')
+                    : `hover:bg-gray-200/50 dark:hover:bg-[#222] ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-600'}`
                 }`}
               >
                 {tab}
@@ -178,33 +177,42 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
         {/* Main Content Area */}
         <div className="flex-1 flex flex-col overflow-hidden relative">
-          <div className="p-6 pb-4 flex items-center justify-between border-b border-slate-700/50 dark:border-slate-700">
-            <h3 className={`text-xl font-bold ${themeMode === 'dark' ? 'text-white' : 'text-slate-900'}`}>
+          <div className={`p-6 pb-4 flex items-center justify-between border-b ${themeMode === 'dark' ? 'border-[#222]' : 'border-gray-200'}`}>
+            <h3 className={`text-lg font-semibold ${themeMode === 'dark' ? 'text-white' : 'text-gray-900'}`}>
               {activeTab}
             </h3>
-            <div className="flex items-center space-x-3 mr-10">
-              {successMsg && <span className="text-sm text-green-500 font-medium">{successMsg}</span>}
-              {error && <span className="text-sm text-red-500 font-medium">{error}</span>}
+            <div className="flex items-center space-x-4 mr-10">
+              {successMsg && <span className="text-sm text-emerald-600 dark:text-emerald-400 font-medium">{successMsg}</span>}
               <button
                 onClick={handleSave}
                 disabled={saving || loading}
-                className="flex items-center space-x-2 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md font-semibold transition-colors duration-200 disabled:opacity-50"
+                className={`flex items-center space-x-2 px-5 py-2 rounded-md font-medium text-sm transition-colors duration-200 disabled:opacity-50 ${
+                  themeMode === 'dark' ? 'bg-gray-100 hover:bg-white text-gray-900' : 'bg-gray-900 hover:bg-black text-white'
+                }`}
               >
                 {saving ? <Loader2 className="w-4 h-4 animate-spin" /> : <Save className="w-4 h-4" />}
-                <span>Save Changes</span>
+                <span>Save</span>
               </button>
             </div>
           </div>
 
-          <div className="flex-1 overflow-auto p-6">
+          <div className="flex-1 overflow-auto bg-transparent relative">
+            {error && (
+              <div className={`m-6 p-4 rounded-md border text-sm flex items-start space-x-3 ${
+                themeMode === 'dark' ? 'bg-red-950/30 border-red-900/50 text-red-200' : 'bg-red-50 border-red-200 text-red-800'
+              }`}>
+                <div className="flex-1 font-medium">{error}</div>
+              </div>
+            )}
+            
             {loading ? (
-              <div className="flex items-center justify-center h-full">
-                <Loader2 className="w-8 h-8 text-blue-600 animate-spin" />
+              <div className="flex items-center justify-center h-48">
+                <Loader2 className={`w-6 h-6 animate-spin ${themeMode === 'dark' ? 'text-gray-400' : 'text-gray-500'}`} />
               </div>
             ) : (
-              <div className="min-w-[800px]">
-                <div className={`grid grid-cols-6 gap-4 p-4 rounded-t-md text-xs font-bold uppercase tracking-wider ${
-                  themeMode === 'dark' ? 'bg-slate-800 text-slate-300' : 'bg-slate-100 text-slate-700'
+              <div className="min-w-[800px] p-6 pt-2">
+                <div className={`grid grid-cols-6 gap-4 p-3 rounded-md text-[11px] font-bold uppercase tracking-widest mb-2 ${
+                  themeMode === 'dark' ? 'bg-[#111] text-gray-400' : 'bg-gray-50 text-gray-500'
                 }`}>
                   <div>Platform</div>
                   <div>User Id</div>
@@ -222,10 +230,10 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
                           type="text"
                           value={row[field as keyof AccountRow] as string}
                           onChange={(e) => handleInputChange(row.id, field as keyof AccountRow, e.target.value)}
-                          className={`w-full px-3 py-2 rounded-md border text-sm focus:outline-none focus:border-blue-500 transition-colors ${
+                          className={`w-full px-3 py-2.5 rounded-md border text-sm focus:outline-none transition-colors ${
                             themeMode === 'dark' 
-                              ? 'bg-slate-800 border-slate-700 text-white' 
-                              : 'bg-white border-slate-300 text-slate-900'
+                              ? 'bg-[#111] border-[#222] focus:border-gray-500 text-gray-200' 
+                              : 'bg-white border-gray-200 focus:border-gray-400 text-gray-900'
                           }`}
                         />
                       ))}
@@ -235,10 +243,14 @@ export const AccountsCredentialModal: React.FC<AccountsCredentialModalProps> = (
 
                 <button
                   onClick={handleAddRow}
-                  className="mt-6 flex items-center space-x-2 px-4 py-2 bg-slate-200 hover:bg-slate-300 dark:bg-slate-800 dark:hover:bg-slate-700 text-slate-800 dark:text-slate-200 rounded-md font-medium transition-colors border border-slate-300 dark:border-slate-700"
+                  className={`mt-6 flex items-center space-x-2 px-4 py-2 rounded-md font-medium text-sm transition-colors border ${
+                    themeMode === 'dark' 
+                      ? 'bg-[#111] hover:bg-[#222] border-[#333] text-gray-300' 
+                      : 'bg-white hover:bg-gray-50 border-gray-200 text-gray-700'
+                  }`}
                 >
                   <Plus className="w-4 h-4" />
-                  <span>Add New Row</span>
+                  <span>Add Row</span>
                 </button>
               </div>
             )}
