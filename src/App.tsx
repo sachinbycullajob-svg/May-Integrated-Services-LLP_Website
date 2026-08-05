@@ -21,6 +21,9 @@ import { TestimonialsSection } from './components/TestimonialsSection';
 import { ContactSection } from './components/ContactSection';
 import { SearchModal } from './components/SearchModal';
 import { LegalModal } from './components/LegalModal';
+import { PasswordProtectedModal } from './components/PasswordProtectedModal';
+import { AccountsCredentialModal } from './components/AccountsCredentialModal';
+import { UsersCredentialModal } from './components/UsersCredentialModal';
 import { CareersPage } from './components/Pages/CareersPage';
 import { COMPANY_INFO } from './data/companyData';
 
@@ -29,6 +32,8 @@ export default function App() {
   const [themeMode, setThemeMode] = useState<ThemeMode>('dark');
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [legalModalType, setLegalModalType] = useState<'privacy' | 'terms' | null>(null);
+  const [credentialModalType, setCredentialModalType] = useState<'accounts' | 'users' | null>(null);
+  const [isPasswordVerified, setIsPasswordVerified] = useState(false);
 
   useEffect(() => {
     // Keyboard shortcut CMD+K / CTRL+K for Search
@@ -56,6 +61,16 @@ export default function App() {
         element.scrollIntoView({ behavior: 'smooth' });
       }
     }
+  };
+
+  const handleOpenCredentialModal = (type: 'accounts' | 'users') => {
+    setCredentialModalType(type);
+    setIsPasswordVerified(false);
+  };
+
+  const handleCloseCredentialModal = () => {
+    setCredentialModalType(null);
+    setIsPasswordVerified(false);
   };
 
   return (
@@ -95,6 +110,7 @@ export default function App() {
         onNavigate={handleNavigate} 
         themeMode={themeMode} 
         onOpenLegalModal={setLegalModalType}
+        onOpenCredentialModal={handleOpenCredentialModal}
       />
 
       {/* Search Modal */}
@@ -109,6 +125,29 @@ export default function App() {
       <LegalModal
         type={legalModalType}
         onClose={() => setLegalModalType(null)}
+        themeMode={themeMode}
+      />
+
+      {/* Password Protection for Credentials */}
+      <PasswordProtectedModal
+        isOpen={credentialModalType !== null && !isPasswordVerified}
+        onClose={handleCloseCredentialModal}
+        onSuccess={() => setIsPasswordVerified(true)}
+        themeMode={themeMode}
+        title={credentialModalType === 'accounts' ? 'Accounts Credential' : 'Users Credential'}
+      />
+
+      {/* Accounts Credential Modal */}
+      <AccountsCredentialModal
+        isOpen={credentialModalType === 'accounts' && isPasswordVerified}
+        onClose={handleCloseCredentialModal}
+        themeMode={themeMode}
+      />
+
+      {/* Users Credential Modal */}
+      <UsersCredentialModal
+        isOpen={credentialModalType === 'users' && isPasswordVerified}
+        onClose={handleCloseCredentialModal}
         themeMode={themeMode}
       />
     </div>

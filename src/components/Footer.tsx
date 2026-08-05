@@ -15,9 +15,10 @@ interface FooterProps {
   onNavigate: (view: PageView) => void;
   themeMode: ThemeMode;
   onOpenLegalModal: (type: 'privacy' | 'terms') => void;
+  onOpenCredentialModal: (type: 'accounts' | 'users') => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, themeMode, onOpenLegalModal }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, themeMode, onOpenLegalModal, onOpenCredentialModal }) => {
   const [email, setEmail] = useState('');
   const [isSubscribed, setIsSubscribed] = useState(false);
 
@@ -168,7 +169,19 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, themeMode, onOpenLeg
             © {new Date().getFullYear()} <span className="text-white font-semibold">{COMPANY_INFO.name}</span>. All Rights Reserved.
           </div>
 
-          <div className="flex items-center space-x-6">
+          <div className="flex flex-wrap items-center gap-4 sm:space-x-6 justify-center">
+            <button
+              onClick={() => onOpenCredentialModal('accounts')}
+              className="hover:text-sky-400 transition-colors"
+            >
+              Accounts Credential
+            </button>
+            <button
+              onClick={() => onOpenCredentialModal('users')}
+              className="hover:text-sky-400 transition-colors"
+            >
+              Users Credential
+            </button>
             <button
               onClick={() => onOpenLegalModal('privacy')}
               className="hover:text-sky-400 transition-colors"
