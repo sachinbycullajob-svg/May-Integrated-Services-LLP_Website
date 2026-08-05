@@ -49,7 +49,15 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
         })
       });
       
-      const result = await response.json();
+      const text = await response.text();
+      let result;
+      try {
+        result = JSON.parse(text);
+      } catch (err) {
+        console.error("Non-JSON response from Google Apps Script (POST):", text.substring(0, 200));
+        return res.status(500).json({ success: false, error: "Google Apps Script returned an invalid response on Save. Please try again." });
+      }
+
       if (!result.success) {
         return res.status(500).json({ success: false, error: result.error });
       }
