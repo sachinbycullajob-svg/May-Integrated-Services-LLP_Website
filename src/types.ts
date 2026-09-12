@@ -39,6 +39,22 @@ export interface Brand {
   isDropshipping?: boolean;
 }
 
+export interface AuthorizedBrand {
+  id: string;
+  name: string;
+  category: string;
+  classification: 'Authorized Product / Brand';
+  soldUnder: string[];
+  description: string;
+  marketplaces: string[];
+  keyStats: {
+    label: string;
+    value: string;
+  }[];
+  accentColor: string;
+  iconName: string;
+}
+
 export interface JourneyMilestone {
   year: number;
   title: string;

@@ -1,5 +1,6 @@
 import {
   Brand, 
+  AuthorizedBrand,
   JourneyMilestone, 
   ServiceItem, 
   GlobalHub, 
@@ -152,6 +153,39 @@ export const BRANDS: Brand[] = [
     ],
     accentColor: 'from-emerald-500 to-cyan-500',
     iconName: 'ShoppingCart'
+  }
+];
+
+export const AUTHORIZED_BRANDS: AuthorizedBrand[] = [
+  {
+    id: 'nue',
+    name: 'Nué',
+    category: 'Beauty, Body Solutions & Lifestyle Essentials',
+    classification: 'Authorized Product / Brand',
+    soldUnder: ['Ideal Cosmo', 'Venus Enterprises'],
+    description: 'Specialized body adhesives, skin-friendly fashion tapes, and modern beauty solutions authorized for marketplace distribution under our retail brand accounts.',
+    marketplaces: ['Amazon India', 'Flipkart Assured', 'Direct Channels'],
+    keyStats: [
+      { label: 'Classification', value: 'Authorized Brand' },
+      { label: 'Authenticity', value: '100% Genuine' }
+    ],
+    accentColor: 'from-pink-500 to-rose-500',
+    iconName: 'Sparkles'
+  },
+  {
+    id: 'fruiser',
+    name: 'Fruiser',
+    category: 'Personal Care, Hygiene & Body Formulations',
+    classification: 'Authorized Product / Brand',
+    soldUnder: ['Venus Enterprises', 'May Global Ventures'],
+    description: 'Internationally renowned personal care and hygiene brand celebrated for nourishing goat’s milk shower creams, hand washes, and family wellness formulations, distributed via our authorized accounts.',
+    marketplaces: ['Amazon India', 'Flipkart Assured', 'Wholesale Distribution'],
+    keyStats: [
+      { label: 'Classification', value: 'Authorized Brand' },
+      { label: 'Authenticity', value: '100% Genuine' }
+    ],
+    accentColor: 'from-amber-500 to-emerald-500',
+    iconName: 'ShieldCheck'
   }
 ];
 
