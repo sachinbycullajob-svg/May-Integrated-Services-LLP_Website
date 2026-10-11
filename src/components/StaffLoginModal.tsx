@@ -8,7 +8,6 @@ import {
   Shield, 
   Layers, 
   Database, 
-  FileText, 
   RefreshCw, 
   Truck, 
   BarChart3,
@@ -65,8 +64,6 @@ export const StaffLoginModal: React.FC<StaffLoginModalProps> = ({
         return <Layers className="w-5 h-5 text-amber-500" />;
       case 'scraper-management':
         return <Database className="w-5 h-5 text-blue-500" />;
-      case 'hsn-data':
-        return <FileText className="w-5 h-5 text-emerald-500" />;
       case 'claim-tracking-system':
         return <RefreshCw className="w-5 h-5 text-rose-500" />;
       case 'dropshipping-operations':
