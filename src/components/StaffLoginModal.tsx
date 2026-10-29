@@ -74,6 +74,10 @@ export const StaffLoginModal: React.FC<StaffLoginModalProps> = ({
         return <Layers className="w-5 h-5 text-cyan-500" />;
       case 'awbix':
         return <RefreshCw className="w-5 h-5 text-orange-500" />;
+      case 'automated-repricer-bot':
+        return <Sparkles className="w-5 h-5 text-emerald-500" />;
+      case 'dropshipping-pricing-calculator':
+        return <BarChart3 className="w-5 h-5 text-teal-500" />;
       default:
         return <Sparkles className="w-5 h-5 text-maroon-500" />;
     }
